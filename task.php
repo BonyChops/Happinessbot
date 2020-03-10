@@ -43,7 +43,8 @@ $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "cou
 foreach($searchResult->{"statuses"} as $value){
     if (
         ($value->{"in_reply_to_status_id"} == null)&&
-        (strlen($value->{"text"}) <= 80)){
+        (strlen($value->{"text"}) <= 80)&&
+        ($value->{"retweeted"} == false)){
             $no=0;
             for($i=0;$i<sizeof($minusword);$i++){
                 if(strpos($value->{"text"},$minusword[$i]) != null){
