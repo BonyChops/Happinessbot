@@ -25,6 +25,6 @@ $words = [
 ];
 $cntWord = $words[rand(0,sizeof($words)-1)];
 
-$searchResult = $objTwitterConection->get("search/tweets",["q" => $cnt]);
+$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord]);
 var_dump($searchResult['statuses'][0]);
     
