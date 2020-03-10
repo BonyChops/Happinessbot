@@ -60,7 +60,7 @@ if($cntWord != $buf){
             ($value->{"retweeted"} == false)){
                 $no=0;
                 for($i=0;$i<sizeof($minusword);$i++){
-                    if((strpos($value->{"text"},$minusword[$i]) !== null)){
+                    if((strpos($value->{"text"},$minusword[$i]) != null)){
                         $no = 1;
                         break;
                     }
