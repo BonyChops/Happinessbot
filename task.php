@@ -71,6 +71,7 @@ if($cntWord != $buf){
                         list($gomi,$str) = sscanf($str,"@%s %s");
                     }
                     printf($str);
+                    $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str]);
                     exit;
                 }
         }
