@@ -69,9 +69,9 @@ if($cntWord != $buf){
                     $str = $value->{"text"};
                     if(strpos($str, '@') != null){
                         list($gomi,$str) = sscanf($str,"@%s %s");
-                        printf($str);
-                        exit;
                     }
+                    printf($str);
+                    exit;
                 }
         }
         
