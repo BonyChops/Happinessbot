@@ -31,7 +31,7 @@ $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "cou
 foreach($searchResult->{"statuses"} as $value){
     if (
         ($value->{"in_reply_to_status_id"} == null)&&
-        (strlen($value->{"text"}) <= 20)){
+        (strlen($value->{"text"}) <= 20000000)){
         echo $value->{"text"};
         exit;
     }
