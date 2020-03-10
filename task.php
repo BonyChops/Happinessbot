@@ -53,7 +53,11 @@ foreach($searchResult->{"statuses"} as $value){
                 }
             }
             if($no == 0){
-                echo $value->{"text"};
+                $str = $value->{"text"};
+                if(strpos($str, '@') != null){
+                    list($gomi,$str) = sscanf($str,"@%s %s");
+                }
+                printf($str);
                 exit;
             }
     }
