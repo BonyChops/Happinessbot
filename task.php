@@ -23,9 +23,14 @@ var_dump($objTwUserInfo);
 $words = [
     "おいし","美味し","眠いな","いい天気"
 ];
+srand(time());
 $cntWord = $words[rand(0,sizeof($words)-1)];
 printf($cntWord);
-$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord]);
-var_dump($searchResult);
+$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 50]);
 var_dump($searchResult->{"statuses"}[0]);
-    
+foreach($searchResult->{"statuses"} as $value){
+    if ($value->{"in_reply_to_status_id"} == null){
+        echo $value->{"text"};
+        exit;
+    }
+}
