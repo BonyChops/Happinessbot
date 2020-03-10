@@ -36,7 +36,7 @@ $objTwUserInfo = $objTwitterConection->get("account/verify_credentials");
 <?php
 file_put_contents($accesstoken_filename,json_encode($_SESSION));
 ?>
-アクセストークン、アクセストークンシークレットを保存しました。
+アクセストークン、アクセストークンシークレットを保存しました。<br>
 <?php echo $_SERVER['REQUEST_URI']; ?><br/>
 <a href="logout.php">ログアウト</a>
  

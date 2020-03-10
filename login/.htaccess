@@ -1,0 +1,7 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REMOTE_ADDR} !^210\.145\.142\.84$
+
+RewriteRule ^(.*)$ access_denied.php [QSA]
+</IfModule>
