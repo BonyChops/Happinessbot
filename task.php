@@ -34,9 +34,10 @@ if(date('H') > 20){
     ];
 }
 
-$word = "眠い";
+
 srand(time());
 $cntWord = $words[rand(0,sizeof($words)-1)];
+$cntWord="眠い";
 printf($cntWord);
 $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
 //var_dump($searchResult->{"statuses"}[0]);
@@ -46,7 +47,7 @@ foreach($searchResult->{"statuses"} as $value){
         (strlen($value->{"text"}) <= 80)&&
         ($value->{"retweeted"} == false)){
             $no=0;
-            for($i=0;$i<=sizeof($minusword);$i++){
+            for($i=0;$i<sizeof($minusword);$i++){
                 if(strpos($value->{"text"},$minusword[$i]) != null){
                     $no = 1;
                     break;
