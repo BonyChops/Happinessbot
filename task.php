@@ -26,12 +26,12 @@ $words = [
 srand(time());
 $cntWord = $words[rand(0,sizeof($words)-1)];
 printf($cntWord);
-$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 50]);
+$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
 //var_dump($searchResult->{"statuses"}[0]);
 foreach($searchResult->{"statuses"} as $value){
     if (
         ($value->{"in_reply_to_status_id"} == null)&&
-        (strlen($value->{"text"}) <= 20000000)){
+        (strlen($value->{"text"}) <= 80)){
         echo $value->{"text"};
         exit;
     }
