@@ -61,10 +61,9 @@ foreach($searchResult->{"statuses"} as $value){
                 $str = $value->{"text"};
                 if(strpos($str, '@') != null){
                     list($gomi,$str) = sscanf($str,"@%s %s");
+                    printf($str);
+                    exit;
                 }
-            break;
             }
     }
-}}while(isset($str));
-printf($str);
-exit;
+}}while(!isset($str));
