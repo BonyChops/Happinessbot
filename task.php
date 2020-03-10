@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 //インポート
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-$TwitterAccountInfo = json_decode($$accesstoken_filename,true);
+$TwitterAccountInfo = json_decode(file_get_contents($accesstoken_filename),true);
 
 $objTwitterConection = new TwitterOAuth
  (
