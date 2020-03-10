@@ -47,7 +47,7 @@ if(!isset($LastID)){
     $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
 }else{
     printf("LastID detected:".$LastID."\n");
-    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$sLastID]);
+    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$LastID]);
 }
 
 //var_dump($searchResult->{"statuses"}[0]);
