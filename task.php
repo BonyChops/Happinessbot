@@ -65,6 +65,6 @@ foreach($searchResult->{"statuses"} as $value){
             break;
             }
     }
-}}while(!isset($str));
+}}while(isset($str));
 printf($str);
 exit;
