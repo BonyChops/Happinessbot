@@ -48,7 +48,7 @@ foreach($searchResult->{"statuses"} as $value){
         ($value->{"retweeted"} == false)){
             $no=0;
             for($i=0;$i<sizeof($minusword);$i++){
-                printf($value->{"text"},$minusword[$i]."\n");
+                printf(strpos($value->{"text"},$minusword[$i]));
                 if(strpos($value->{"text"},$minusword[$i]) != null){
                     $no = 1;
                     break;
