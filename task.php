@@ -74,5 +74,5 @@ foreach($searchResult->{"statuses"} as $value){
     }
     
 }
-$LastID = $value->{"id"}
+$LastID = $value->{"id"};
 }while(!isset($str));
