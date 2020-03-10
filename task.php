@@ -49,7 +49,7 @@ foreach($searchResult->{"statuses"} as $value){
             $no=0;
             for($i=0;$i<sizeof($minusword);$i++){
                 printf(strpos($value->{"text"},$minusword[$i])."\n");
-                if((strpos($value->{"text"},$minusword[$i]) != null)&&(strpos($value->{"text"},$minusword[$i]) != 0)){
+                if((strpos($value->{"text"},$minusword[$i]) != null)&&(strpos($value->{"text"},$minusword[$i]) == 0)){
                     $no = 1;
                     break;
                 }
