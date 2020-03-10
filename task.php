@@ -43,7 +43,13 @@ if((date('H') >= 5)||(date('H') <= 8)){
 srand(time());
 $cntWord = $words[rand(0,sizeof($words)-1)];
 printf($cntWord);
-$searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
+if(!isset($LastID)){
+    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
+}else{
+    printf("LastID detected:".$LastID."\n");
+    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$sLastID]);
+}
+
 //var_dump($searchResult->{"statuses"}[0]);
 foreach($searchResult->{"statuses"} as $value){
     if (
@@ -66,4 +72,7 @@ foreach($searchResult->{"statuses"} as $value){
                 }
             }
     }
-}}while(!isset($str));
+    
+}
+$LastID = $value->{"id"}
+}while(!isset($str));

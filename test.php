@@ -2,4 +2,7 @@
 $words = [
     "おいし","美味し","眠いな","いい天気"
 ];
-printf(rand(0,4));
+foreach ($words as $value){
+    printf($value);
+}
+printf($value);
