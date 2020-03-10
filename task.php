@@ -17,5 +17,5 @@ $objTwitterConection = new TwitterOAuth
  $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
  );
 
- $objTwUserInfo = $objTwitterConection->post("status/update",["status" => "Hello, world!"]);
+ $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => "Hello, world!"]);
  var_dump($objTwUserInfo);
