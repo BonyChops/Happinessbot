@@ -42,37 +42,40 @@ if((date('H') >= 5)&&(date('H') <= 8)){
 
 srand(time());
 $cntWord = $words[rand(0,sizeof($words)-1)];
-printf($cntWord);
-if(!isset($LastID)){
-    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
-}else{
-    printf("LastID detected:".$LastID."\n");
-    $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$LastID]);
-}
-
-//var_dump($searchResult->{"statuses"}[0]);
-foreach($searchResult->{"statuses"} as $value){
-    if (
-        ($value->{"in_reply_to_status_id"} == null)&&
-        (strlen($value->{"text"}) <= 80)&&
-        ($value->{"retweeted"} == false)){
-            $no=0;
-            for($i=0;$i<sizeof($minusword);$i++){
-                if((strpos($value->{"text"},$minusword[$i]) != null)||(strpos($value->{"text"},$minusword[$i]) == 0)){
-                    $no = 1;
-                    break;
-                }
-            }
-            if($no == 0){
-                $str = $value->{"text"};
-                if(strpos($str, '@') != null){
-                    list($gomi,$str) = sscanf($str,"@%s %s");
-                    printf($str);
-                    exit;
-                }
-            }
+if($cntWord != $buf){
+    $buf = $cntWord;
+    printf($cntWord);
+    if(!isset($LastID)){
+        $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
+    }else{
+        printf("LastID detected:".$LastID."\n");
+        $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$LastID]);
     }
-    
+
+    //var_dump($searchResult->{"statuses"}[0]);
+    foreach($searchResult->{"statuses"} as $value){
+        if (
+            ($value->{"in_reply_to_status_id"} == null)&&
+            (strlen($value->{"text"}) <= 80)&&
+            ($value->{"retweeted"} == false)){
+                $no=0;
+                for($i=0;$i<sizeof($minusword);$i++){
+                    if((strpos($value->{"text"},$minusword[$i]) != null)||(strpos($value->{"text"},$minusword[$i]) == 0)){
+                        $no = 1;
+                        break;
+                    }
+                }
+                if($no == 0){
+                    $str = $value->{"text"};
+                    if(strpos($str, '@') != null){
+                        list($gomi,$str) = sscanf($str,"@%s %s");
+                        printf($str);
+                        exit;
+                    }
+                }
+        }
+        
+    }
+    $LastID = $value->{"id"};
 }
-$LastID = $value->{"id"};
 }while(!isset($str));
