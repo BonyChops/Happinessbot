@@ -29,7 +29,9 @@ printf($cntWord);
 $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 50]);
 var_dump($searchResult->{"statuses"}[0]);
 foreach($searchResult->{"statuses"} as $value){
-    if ($value->{"in_reply_to_status_id"} == null){
+    if (
+        ($value->{"in_reply_to_status_id"} == null)&&
+        (strlen($value->{"text"}) <= 20)){
         echo $value->{"text"};
         exit;
     }
