@@ -18,3 +18,4 @@ $objTwitterConection = new TwitterOAuth
  );
 
  $objTwUserInfo = $objTwitterConection->post("status/update",["status" => "Hello, world!"]);
+ var_dump($objTwUserInfo);
