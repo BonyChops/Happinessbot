@@ -22,7 +22,7 @@ var_dump($objTwUserInfo);
 $date = date('Y-m-d G:i:s');
 
 $minusword = [
-    "しね","死ね","最悪","ごみ","ゴミ","コロナ","フェミ","悪い","かす","カス","暴力","性被害","寝取","NTR","眠","眠"
+    "しね","死ね","最悪","ごみ","ゴミ","コロナ","フェミ","悪い","かす","カス","暴力","性被害","寝取","NTR","眠"
 ];
 
 $words = [
@@ -49,7 +49,7 @@ foreach($searchResult->{"statuses"} as $value){
             $no=0;
             for($i=0;$i<sizeof($minusword);$i++){
                 printf(strpos($value->{"text"},$minusword[$i])."\n");
-                if((strpos($value->{"text"},$minusword[$i]) != null)&&(strpos($value->{"text"},$minusword[$i]) == 0)){
+                if((strpos($value->{"text"},$minusword[$i]) != null)||(strpos($value->{"text"},$minusword[$i]) == 0)){
                     $no = 1;
                     break;
                 }
