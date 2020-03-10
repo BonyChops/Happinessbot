@@ -19,6 +19,7 @@ $objTwitterConection = new TwitterOAuth
 
 //$objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => "Hello, world!"]);
 var_dump($objTwUserInfo);
+do{
 $date = date('Y-m-d G:i:s');
 
 $minusword = [
@@ -61,8 +62,9 @@ foreach($searchResult->{"statuses"} as $value){
                 if(strpos($str, '@') != null){
                     list($gomi,$str) = sscanf($str,"@%s %s");
                 }
-                printf($str);
-                exit;
+            break;
             }
     }
-}
+}}while(!isset($str));
+printf($str);
+exit;
