@@ -31,7 +31,7 @@ require_once('../../../header.php');
 適当な単語を入れてみてください。</p>
 <center>
 <form method="get">
-<input type="text" name="search" placeholder="単語を入れてください" size="100">
+<input type="text" name="search" placeholder="単語を入れてください">
 <input type="submit" value="検索">
 </form>
 </center>
