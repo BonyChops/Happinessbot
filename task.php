@@ -19,6 +19,6 @@ $objTwitterConection = new TwitterOAuth
 
 //$objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => "Hello, world!"]);
 require_once("chooseTweet.php");
-$str = chooseTweet($objTwitterConection);
+$str = chooseTweet($objTwitterConection,"",true);
 $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str]);
 

@@ -1,6 +1,6 @@
 
 <?php
-function chooseTweet($objTwitterConection, $custom = ""){
+function chooseTweet($objTwitterConection, $custom = "", $like = false){
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
@@ -8,7 +8,7 @@ function chooseTweet($objTwitterConection, $custom = ""){
         $minusword = [
             "しね","死ね","最悪","ごみ","ゴミ","コロナ","フェミ","悪い","かす","カス",
             "暴力","性被害","寝取","NTR","クソ","だるい","痛い","寂しい","生理","愚痴",
-            "副業"
+            "副業","悲惨","なにやってんだよ","あほ","アホ"
         ];
 
         $words = [
@@ -67,6 +67,9 @@ function chooseTweet($objTwitterConection, $custom = ""){
                             }
                             printf($str."\n");
                             if (($str != "")&&(isset($str))){
+                                if($like == true){
+                                    $likeResult = $objTwitterConection->post("favorites/create",[["id"] => $value->{"id"}]);
+                                }
                                 return $str;
                             }
                         }
