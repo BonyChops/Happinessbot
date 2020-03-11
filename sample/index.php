@@ -49,7 +49,7 @@ if(isset($_GET['search'])){
     <?php }else{ 
         list($id,$screen_name) = $result;
         ?>
-        <center><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/<?= $screen_name ?>/status/<?= $id ?>?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+        <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/<?= $screen_name ?>/status/<?= $id ?>?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
     <?php }
 ?>
 </section> 
@@ -128,11 +128,11 @@ function chooseTweet($objTwitterConection, $custom = ""){
         }
         if($cntWord != $buf){
             $buf = $cntWord;
-            printf($cntWord."\n");
+            //printf($cntWord."\n");
             if(!isset($LastID)){
                 $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
             }else{
-                printf("LastID detected:".$LastID."\n");
+                //printf("LastID detected:".$LastID."\n");
                 $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"max_id"=>$LastID]);
             }
 
