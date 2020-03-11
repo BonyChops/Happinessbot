@@ -31,7 +31,7 @@ require_once('../../../header.php');
 適当な単語を入れてみてください。</p>
 <center>
 <form method="get">
-<input type="text" name="search" placeholder="単語を入れてください">
+<input type="text" name="search" placeholder="単語を入れてください" size="100">
 <input type="submit" value="検索">
 </form>
 </center>
@@ -40,7 +40,7 @@ require_once('../../../header.php');
 if(isset($_GET['search'])){
     $result = chooseTweet($objTwitterConection, $_GET['search']);
     ?>
-
+<section>
 <h2>検索結果</h2>
     <?php if($result == "IMPOSSIBLE!"){ ?>
 <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
@@ -52,11 +52,11 @@ if(isset($_GET['search'])){
         <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/<?= $screen_name ?>/status/<?= $id ?>?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
     <?php }
 ?>
-
-<?php } ?>
 </section> 
+<?php } ?>
 
-</section>
+
+
 <style>
 .twt_wrap {
   text-align: center;
