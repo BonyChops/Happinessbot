@@ -19,7 +19,8 @@ function chooseTweet($objTwitterConection, $custom = ""){
         if((date('H') >= 20)||(date('H') <= 4)){
             $words = [
                 "眠いな","ねれない","寝れない","羊 数え","いい夢","腹減った",
-                "お腹へった","食べたい","おなかすいた","おやすみ"
+                "おやすみ","眠くなって","何しよう","おもしろ","美味しかった",
+                "星がきれい","やべえ","あったかい"
             ];
         }
         if((date('H') >= 5)&&(date('H') <= 8)){
@@ -35,7 +36,7 @@ function chooseTweet($objTwitterConection, $custom = ""){
         }
         if($cntWord != $buf){
             $buf = $cntWord;
-            printf($cntWord);
+            printf($cntWord."\n");
             if(!isset($LastID)){
                 $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100]);
             }else{
@@ -61,7 +62,7 @@ function chooseTweet($objTwitterConection, $custom = ""){
                             if(strpos($str, '@') != null){
                                 list($gomi,$str) = sscanf($str,"@%s %s");
                             }
-                            printf($str);
+                            printf($str."\n");
                             if (($str != "")&&(isset($str))){
                                 return $str;
                             }
