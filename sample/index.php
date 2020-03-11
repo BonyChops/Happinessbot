@@ -75,6 +75,13 @@ if(isset($_GET['search'])){
   <a class="twitter-timeline" data-width="1000" data-height="500" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 </section>
+
+<section>
+<h2>仕組み</h2>
+<p class="c">Githubにて配布しております。</p>
+<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fa fa-github"></a></p>
+</section>
+
 <!--/contents-->
 </div>
 <?php require_once('../../../footer.php'); ?>
