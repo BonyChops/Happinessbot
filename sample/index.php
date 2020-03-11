@@ -92,7 +92,7 @@ if(isset($_GET['search'])){
 
 function chooseTweet($objTwitterConection, $custom = ""){
     srand(time());
-    for($i=0; $i<1; $i++){
+    for($i=0; $i<5; $i++){
         $date = date('Y-m-d G:i:s');
 
         $minusword = [
