@@ -21,10 +21,23 @@ require_once('../../../header.php');
 <section>
 
 </section>
+<style>
+.twt_wrap {
+  text-align: center;
+}
+.twt_wrap > iframe {
+  margin: auto;
+}
+</style>
+
+
 <h2>幸せうんちくんbot</h2>
 <p class="c">上のアルゴリズムを使って幸せなツイートを定期的につぶやいています。よかったらフォローお願いします。</p>
-<div style="text-align:center;"><a class="twitter-timeline" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
+<div class="twt_wrap">
+  <a class="twitter-timeline">
+    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+    </div>
+</div>
 
 <!--/contents-->
 </div>
