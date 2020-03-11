@@ -44,7 +44,7 @@ if(isset($_GET['search'])){
 <h2>検索結果</h2>
     <?php if($result == "IMPOSSIBLE!"){ ?>
 <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
-<?php } else if($result == "IMPOSSIBLE!"){ ?>
+<?php } else if($result == "BAD"){ ?>
     <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
     <?php }else{ 
         list($id,$screen_name) = $result;
