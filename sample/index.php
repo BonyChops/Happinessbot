@@ -45,7 +45,7 @@ if(isset($_GET['search'])){
 <?php } else if($result == "IMPOSSIBLE!"){ ?>
     <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
     <?php }else{ ?>
-        <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/IamHappiestPoop/status/1237750129978818560?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <center><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/IamHappiestPoop/status/1237750129978818560?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
     <?php }
 ?>
 </section> 
