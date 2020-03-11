@@ -1,7 +1,7 @@
 <?php
 $title="Happy Tweets";
-ini_set('display_errors', "On");
-require_once('../../header.php');
+
+require_once('../../../header.php');
 ?>
 
 <div id="contents">
@@ -28,4 +28,4 @@ require_once('../../header.php');
 </center>
 <!--/contents-->
 </div>
-<?php require_once('../../footer.php'); ?>
+<?php require_once('../../../footer.php'); ?>
