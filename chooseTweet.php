@@ -1,6 +1,6 @@
 
 <?php
-function chooseTweet(){
+function chooseTweet($objTwitterConection){
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
