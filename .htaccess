@@ -2,6 +2,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{REMOTE_ADDR} !^210\.145\.142\.84$ #ここに自宅のIPを設定し、それ以外からは接続できないようにする
-
+RewriteCond %{REQUEST_URI}  !(^/index.php)
 RewriteRule ^(.*)$ access_denied.php [QSA]
 </IfModule>
