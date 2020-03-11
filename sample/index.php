@@ -13,8 +13,9 @@ require_once('../../../header.php');
 そんなTLで心が荒んでしまったあなた。ぜひここで幸せなツイートを探してみましょう。<br>
 適当な単語を入れてみてください。</p>
 <form method="get">
-<imput type="text" name="search" placeholder="単語を入れてください"/>
-<imput type="submit" value="検索">
+<imput type="text" name="search" placeholder="単語を入れてください">
+<input type="tel" name="telNumber" placeholder="090-1234-5678">
+<input type="submit" value="検索">
 </form>
 </section>
 
