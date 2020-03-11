@@ -36,7 +36,7 @@ require_once('../../../header.php');
 <div class="twt_wrap">
 <a href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @IamHappiestPoop</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
   <a class="twitter-timeline">
-  <a class="twitter-timeline" data-width="300" data-height="500" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width="1000" data-height="500" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
 
