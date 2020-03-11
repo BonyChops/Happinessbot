@@ -29,10 +29,12 @@ require_once('../../../header.php');
 <p class="c">近年、物騒なツイートがいいねやRTを稼いでいます。ですがそれでいいのでしょうか。<br>
 そんなTLで心が荒んでしまったあなた。ぜひここで幸せなツイートを探してみましょう。<br>
 適当な単語を入れてみてください。</p>
+<center>
 <form method="get">
 <input type="text" name="search" placeholder="単語を入れてください">
 <input type="submit" value="検索">
 </form>
+</center>
 </section>
 <?php
 if(isset($_GET['search'])){
