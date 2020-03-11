@@ -23,7 +23,7 @@ require_once('../../../header.php');
 </section>
 <h2>幸せうんちくんbot</h2>
 <p class="c">上のアルゴリズムを使って幸せなツイートを定期的につぶやいています。よかったらフォローお願いします。</p>
-<div style="margin: 0 auto;"><a class="twitter-timeline" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<div style="text-align:center;"><a class="twitter-timeline" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
 <!--/contents-->
