@@ -40,7 +40,7 @@ require_once('../../../header.php');
 if(isset($_GET['search'])){
     $result = chooseTweet($objTwitterConection, $_GET['search']);
     ?>
-<section>
+
 <h2>検索結果</h2>
     <?php if($result == "IMPOSSIBLE!"){ ?>
 <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
@@ -52,9 +52,9 @@ if(isset($_GET['search'])){
         <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/<?= $screen_name ?>/status/<?= $id ?>?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
     <?php }
 ?>
-</section> 
-<?php } ?>
 
+<?php } ?>
+</section> 
 
 </section>
 <style>
@@ -66,7 +66,7 @@ if(isset($_GET['search'])){
 }
 </style>
 
-
+<section>
 <h2>幸せうんちくんbot</h2>
 <p class="c">上のアルゴリズムを使って幸せなツイートを定期的につぶやいています。よかったらフォローお願いします。</p>
 <div class="twt_wrap">
@@ -75,7 +75,7 @@ if(isset($_GET['search'])){
   <a class="twitter-timeline" data-width="1000" data-height="500" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
-
+</section>
 <!--/contents-->
 </div>
 <?php require_once('../../../footer.php'); ?>
