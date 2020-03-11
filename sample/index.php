@@ -17,9 +17,16 @@ require_once('../../../header.php');
 <input type="tel" name="telNumber" placeholder="090-1234-5678">
 <input type="submit" value="検索">
 </form>
+
+<form action="" method="post">
+	<p><label>電話番号：<br><input type="tel" name="telNumber" placeholder="090-1234-5678"></label></p>
+	<p><label>メールアドレス：<br><input type="email" name="mailAddress" placeholder="info@example.com"></label></p>
+	<p><input type="submit" value="送信"></p>
+</form>
 </section>
 
-<section>
+
+
 
 </section>
 <style>
