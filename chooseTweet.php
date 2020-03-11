@@ -34,6 +34,9 @@ function chooseTweet($objTwitterConection, $custom = ""){
         if($custom != ""){
             $cntWord = $custom;
         }
+        if(!isset($buf)){
+            $buf = "";
+        }
         if($cntWord != $buf){
             $buf = $cntWord;
             printf($cntWord."\n");
