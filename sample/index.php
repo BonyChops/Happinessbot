@@ -44,8 +44,10 @@ if(isset($_GET['search'])){
 <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
 <?php } else if($result == "IMPOSSIBLE!"){ ?>
     <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
-    <?php }else{ ?>
-        <center><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/IamHappiestPoop/status/1237750129978818560?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+    <?php }else{ 
+        list($id,$screen_name) = $result;
+        ?>
+        <center><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ツイートをロードしています...</p>&mdash; <a href="https://twitter.com/<?= $screen_name ?>/status/<?= $id ?>?ref_src=twsrc%5Etfw">March 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
     <?php }
 ?>
 </section> 
@@ -150,9 +152,9 @@ function chooseTweet($objTwitterConection, $custom = ""){
                             if(strpos($str, '@') != null){
                                 list($gomi,$str) = sscanf($str,"@%s %s");
                             }
-                            printf($str."\n");
+                            //printf($str."\n");
                             if (($str != "")&&(isset($str))){
-                                return $str;
+                                return [$value->{"id_str"},$value->{"user"}->{"screen_name"}];
                             }
                         }
                 }
