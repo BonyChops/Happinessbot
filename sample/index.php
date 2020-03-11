@@ -49,6 +49,7 @@ if(isset($_GET['search'])){
     ?>
 <section>
 <h2>検索結果</h2>
+<p class="c"><?= $_GET['search'] ?>での検索結果:</p>
     <?php if($result == "IMPOSSIBLE!"){ ?>
 <p class="c">ごめんなさい、幸せなツイートを見つけることができませんでした...別の単語でお試しください。</p>
 <?php } else if($result == "BAD"){ ?>
