@@ -20,7 +20,14 @@ $title="Happy Tweets";
 
 require_once('../../../header.php');
 ?>
-
+<style>
+.twt_wrap {
+  text-align: center;
+}
+.twt_wrap > iframe {
+  margin: auto;
+}
+</style>
 <div id="contents">
 
 <section>
@@ -57,14 +64,7 @@ if(isset($_GET['search'])){
 
 
 
-<style>
-.twt_wrap {
-  text-align: center;
-}
-.twt_wrap > iframe {
-  margin: auto;
-}
-</style>
+
 
 <section>
 <h2>幸せうんちくんbot</h2>
