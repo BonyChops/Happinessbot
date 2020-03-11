@@ -55,7 +55,7 @@ function chooseTweet($objTwitterConection, $custom = ""){
                     ($value->{"retweeted"} == false)){
                         $no=0;
                         for($i=0;$i<sizeof($minusword);$i++){
-                            if((strpos($value->{"text"},$minusword[$i]) != false)){
+                            if((strpos($value->{"text"},$minusword[$i]) !== false)){
                                 $no = 1;
                                 break;
                             }
