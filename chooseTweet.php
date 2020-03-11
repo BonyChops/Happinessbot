@@ -68,7 +68,8 @@ function chooseTweet($objTwitterConection, $custom = "", $like = false){
                             printf($str."\n");
                             if (($str != "")&&(isset($str))){
                                 if($like == true){
-                                    $likeResult = $objTwitterConection->post("favorites/create",[["id"] => $value->{"id"}]);
+                                    printf("Like!"."\n");
+                                    $likeResult = $objTwitterConection->post("favorites/create",["id" => $value->{"id"}]);
                                 }
                                 return $str;
                             }
