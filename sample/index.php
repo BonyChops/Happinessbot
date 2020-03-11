@@ -116,8 +116,7 @@ function chooseTweet($objTwitterConection, $custom = ""){
         if($custom != ""){
             $cntWord = $custom;
             for($i=0;$i<sizeof($minusword);$i++){
-                print("checking");
-                if((strpos($custom,$minusword[$i]) != null)||(strpos($custom,$minusword[$i]) == 0)){
+                if((strpos($custom,$minusword[$i]) != false)){
                     return "BAD";
                 }
             }
