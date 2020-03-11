@@ -1,6 +1,6 @@
 
 <?php
-function chooseTweet($objTwitterConection){
+function chooseTweet($objTwitterConection, $custom = ""){
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
@@ -30,6 +30,9 @@ function chooseTweet($objTwitterConection){
 
         shuffle($words);
         $cntWord = $words[rand(0,sizeof($words)-1)];
+        if($custom != ""){
+            $cntWord = $custom;
+        }
         if($cntWord != $buf){
             $buf = $cntWord;
             printf($cntWord);
