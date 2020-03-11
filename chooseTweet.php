@@ -59,7 +59,9 @@ function chooseTweet($objTwitterConection){
                                 list($gomi,$str) = sscanf($str,"@%s %s");
                             }
                             printf($str);
-                            return $str;
+                            if (($str != "")&&(isset($str))){
+                                return $str;
+                            }
                         }
                 }
                 
