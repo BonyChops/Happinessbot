@@ -49,11 +49,13 @@ if($nonrated == ""){
     $nonrated = array();
 }
 echo '<form method="post"><input type="submit" value="決定">';
+$cnt = 0;
 foreach($nonrated as $value){
-    echo '<p>'.$value.'<input type="radio" name="'.$value.'" value="happy">幸せ
-    <input type="radio" name="'.$value.'" value="minusword">不幸
-    <input type="radio" name="'.$value.'" value="others">その他
-    <input type="radio" name="'.$value.'" value="nonrated" checked="checked">未分類</p>';
+    echo '<p>'.$value.'<input type="radio" name="'.$cnt.'" value="happy">幸せ
+    <input type="radio" name="'.$cnt.'" value="minusword">不幸
+    <input type="radio" name="'.$cnt.'" value="others">その他
+    <input type="radio" name="'.$cnt.'" value="nonrated" checked="checked">未分類</p>';
+    $cnt++;
 }
 echo '<input type="submit" value="決定"></form>'
 ?>
