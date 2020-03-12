@@ -1,5 +1,11 @@
 <?php
 require_once('../login/config.php');
+if(isset($_POST)){
+    var_dump($_POST);
+    exit;
+}
+
+
 if($_GET['passwd'] != $passwd){
 ?>
 <form method="get">
@@ -43,14 +49,14 @@ if($others == ""){
 if($nonrated == ""){
     $nonrated = array();
 }
-echo '<form method="post">';
+echo '<form method="post"><imput type="submit" value="決定">';
 foreach($nonrated as $value){
     echo '<p>'.$value.'<imput></p><input type="radio" name="'.$value.'" value="happy">幸せ
     <input type="radio" name="'.$value.'" value="minusword">不幸
     <input type="radio" name="'.$value.'" value="others">その他
     <input type="radio" name="'.$value.'" value="nonrated" checked="checked">未分類</p>';
 }
-echo '</form>'
+echo '<imput type="submit" value="決定"></form>'
 ?>
 
 
