@@ -35,6 +35,7 @@ if(isset($_POST[0])){
             array_splice($others, $i-$chosei, 1);
             $chosei -= 1;
         }
+        printf($_POST[$i]);
     }
     file_put_contents("../words/negative.js",json_encode($minusword));
     file_put_contents("../words/positive.js",json_encode($words));
