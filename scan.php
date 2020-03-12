@@ -20,10 +20,10 @@ $objTwitterConection = new TwitterOAuth
  (
  $sTwitterConsumerKey,
  $sTwitterConsumerSecret);
-$minusword = file_get_contents(json_decode("words/negative.js",true));
-$words = file_get_contents(json_decode("words/positive.js",true));
-$others = file_get_contents(json_decode("words/others.js",true));
-$nonrated = file_get_contents(json_decode("words/nonrated.js",true));
+$minusword = json_decode(file_get_contents("words/negative.js",true));
+$words = json_decode(file_get_contents("words/positive.js",true));
+$others = json_decode(file_get_contents("words/others.js",true));
+$nonrated = json_decode(file_get_contents("words/nonrated.js",true));
 
 
 printf("Learning...");
@@ -36,7 +36,8 @@ for($i=0;$i<100;$i++){
         //printf("LastID detected:".$LastID."\n");
         $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
     }
-    
+    var_dump($searchResult);
+    sleep(5);
     //var_dump($searchResult->{"statuses"}[0]);
     foreach($searchResult->{"statuses"} as $value){
         $str = $value->{"text"};
