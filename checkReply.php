@@ -43,6 +43,7 @@ foreach($searchResult->{"statuses"} as $value){
 $idsStr = substr($idsStr,0,-1);
 $tweetInfo = $objTwitterConection2->get("statuses/lookup",["id" => $value->{"id"}]);
 foreach($tweetInfo as $value){
+    printf($value->{"in_reply_to_screen_name"}."\n");
     if($value->{"in_reply_to_screen_name"} == $botname){
         $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
         $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"}]);
