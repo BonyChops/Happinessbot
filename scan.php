@@ -43,11 +43,11 @@ for($i=0;$i<1;$i++){
         $str = $value->{"text"};
         $str = processTweet($str);
         $result = exec('echo \''.$str.'\' | mecab');
-        printf($result);
+        printf('echo \''.$str.'\' | mecab');
         $array = explode("\n", $result);
         $array = array_map('trim', $array);
         $array = array_filter($array, 'strlen');
-        var_dump($array);
+        //var_dump($array);
         foreach($array as $value2){
             if($value == 'EOS'){
                 break;
