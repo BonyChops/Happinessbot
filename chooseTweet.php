@@ -1,6 +1,6 @@
 
 <?php
-function chooseTweet($objTwitterConection, $custom = "", $like = false){
+function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $like = false){
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
@@ -41,10 +41,10 @@ function chooseTweet($objTwitterConection, $custom = "", $like = false){
             $buf = $cntWord;
             printf($cntWord."\n");
             if(!isset($LastID)){
-                $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
+                $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
             }else{
                 //printf("LastID detected:".$LastID."\n");
-                $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
+                $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
             }
 
             //var_dump($searchResult->{"statuses"}[0]);

@@ -17,8 +17,14 @@ $objTwitterConection = new TwitterOAuth
  $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
  );
 
+ $objTwitterConection2 = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret);
+
+
 //$objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => "Hello, world!"]);
 require_once("chooseTweet.php");
-$str = chooseTweet($objTwitterConection,trim(fgets(STDIN)));
+$str = chooseTweet($objTwitterConection,$objTwitterConection2,trim(fgets(STDIN)));
 printf("(Not tweeted)\n");
 
