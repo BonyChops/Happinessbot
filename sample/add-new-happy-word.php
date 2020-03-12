@@ -33,7 +33,7 @@ if(isset($_POST[0])){
         }
         if($_POST[$i] == "others"){
             array_push($others,$nonrated[$i-$chosei]);
-            array_splice($others, $i-$chosei, 1);
+            array_splice($nonrated, $i-$chosei, 1);
             $chosei -= 1;
         }
 
