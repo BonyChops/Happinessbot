@@ -43,12 +43,14 @@ for($i=0;$i<1;$i++){
         $str = $value->{"text"};
         $str = processTweet($str);
         $result = exec('echo \''.$str.'\' | mecab');
+        printf($result);
         $array = explode("\n", $result);
         $array = array_map('trim', $array);
         $array = array_filter($array, 'strlen');
+        var_dump($array);
         foreach($array as $value2){
             if($value == 'EOS'){
-                continue;
+                break;
             }
             list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=sscanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
             printf($name);
