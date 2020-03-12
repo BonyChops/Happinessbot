@@ -13,9 +13,7 @@ if($words == ""){
 if($others == ""){
     $others = array();
 }
-if($nonrated == ""){
-    $nonrated = array();
-}
+
 
 $chosei = 0;
 if(isset($_POST[0])){
@@ -23,18 +21,18 @@ if(isset($_POST[0])){
         if($_POST[$i] == "happy"){
             array_push($words,$nonrated[$i-$chosei]);
             array_splice($nonrated, $i-$chosei, 1);
-            $chosei -= 1;
+            $chosei += 1;
         }
         if($_POST[$i] == "minusword"){
             printf("yeah");
             array_push($minusword,$nonrated[$i-$chosei]);
             array_splice($nonrated, $i-$chosei, 1);
-            $chosei -= 1;
+            $chosei += 1;
         }
         if($_POST[$i] == "others"){
             array_push($others,$nonrated[$i-$chosei]);
             array_splice($nonrated, $i-$chosei, 1);
-            $chosei -= 1;
+            $chosei += 1;
         }
 
     }
