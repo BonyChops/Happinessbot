@@ -12,6 +12,9 @@ $sTwitterCallBackUri = 'https://**************************'; //コールバッ�
 
 //アクセストークンを保存するファイル名(変更推奨)
 $accesstoken_filename = "accesstoken.js";
+
+//botのscreenname
+$botname = "*******";
  
 //変数初期化
 $objTwitterConection = NULL; //TwitterOAuthクラスのインスタンス化
