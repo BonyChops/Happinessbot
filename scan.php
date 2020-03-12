@@ -47,8 +47,10 @@ for($i=0;$i<1;$i++){
             if($value == 'EOS'){
                 break;
             }
-            list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=sscanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
-            printf($type);
+            list($s,$s2) = sscanf($vslue2,"%s %s");
+            printf($s2);
+            list($type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump) = explode(",", $s2); 
+            printf($default."\n");
             if(($type == "名詞")||($type == "動詞")){
                 if(
                     (array_search($default,$minusword) === false)&&
