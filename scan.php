@@ -42,7 +42,8 @@ for($i=0;$i<1;$i++){
     foreach($searchResult->{"statuses"} as $value){
         $str = $value->{"text"};
         $str = processTweet($str);
-        $array = explode("\n", $str);
+        $result = exec('echo \''.$str.'\' | mecab');
+        $array = explode("\n", $result);
         $array = array_map('trim', $array);
         $array = array_filter($array, 'strlen');
         foreach($array as $value2){
