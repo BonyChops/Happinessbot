@@ -4,18 +4,18 @@ function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
-
-        $minusword = [
+        $minusword = file_get_contents(json_decode("words/negative.js",true));
+/*         $minusword = [
             "しね","死ね","最悪","ごみ","ゴミ","コロナ","フェミ","悪い","かす","カス",
             "暴力","性被害","寝取","NTR","クソ","だるい","痛い","寂しい","生理","愚痴",
             "副業","悲惨","なにやってんだよ","あほ","アホ"
-        ];
-
-        $words = [
+        ]; */
+        $words = file_get_contents(json_decode("words/positive.js",true));
+/*         $words = [
             "おいし","美味し","いい天気","眠いな","買い物","好きな人","お腹いっぱい",
             "腹減った","お腹へった","食べたい","おなかすいた","なつかしい","すこ","すき","好き",
             "何しよう","おもしろ","空が綺麗","昼寝","うんち"
-        ];
+        ]; */
         if((date('H') >= 20)||(date('H') <= 4)){
             $words = [
                 "眠いな","ねれない","寝れない","羊 数え","いい夢","腹減った",
@@ -62,16 +62,14 @@ function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $
                         }
                         if($no == 0){
                             $str = $value->{"text"};
-                            if(strpos($str, '@') != null){
-                                list($gomi,$str) = sscanf($str,"@%s %s");
-                            }
+                            $str = processTweet($str);
                             printf($str."\n");
                             if (($str != "")&&(isset($str))){
                                 if($like == true){
                                     printf("Like!"."\n");
                                     $likeResult = $objTwitterConection->post("favorites/create",["id" => $value->{"id"}]);
                                 }
-                                return processTweet($str);
+                                return $str;
                             }
                         }
                 }
