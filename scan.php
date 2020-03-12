@@ -66,6 +66,8 @@ for($i=0;$i<100;$i++){
     printf($i."\n");
 }
 
+var_dump($nonrated);
+file_put_contents("words/nonrated.js",json_encode($nonrated));
 printf("Done.");
 
 
