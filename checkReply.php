@@ -34,7 +34,7 @@ if($json['minId'] == null){
 
 $cntMinId = -1;
 $idsStr = "";
-$searchResult = $objTwitterConection->get("search/tweets",["q" => '@'.$botname.' filter:replies', "count" => 100,"lang" => "ja", "result_type" => "recent"]);
+$searchResult = $objTwitterConection->get("search/tweets",["q" => $botname.' filter:replies', "count" => 100,"lang" => "ja", "result_type" => "recent"]);
 var_dump($searchResult);
 foreach($searchResult->{"statuses"} as $value){
     if($value->{"id"} > $minId){
