@@ -49,7 +49,7 @@ for($i=0;$i<100;$i++){
             if($value == 'EOS'){
                 continue;
             }
-            list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=scanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
+            list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=sscanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
             if(($type == "名詞")||($type == "動詞")){
                 if(
                     (array_search($default,$minusword) === false)&&
