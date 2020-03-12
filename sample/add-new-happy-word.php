@@ -1,8 +1,8 @@
 <?php
 require_once('../login/config.php');
-if($_POST['passwd'] != $passwd){
+if($_GET['passwd'] != $passwd){
 ?>
-<form>
+<form method="get">
 <input type="password" name="passwd">
 <input type="submit" value="go">
 </form>
