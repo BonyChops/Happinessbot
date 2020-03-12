@@ -29,6 +29,7 @@ $nonrated = json_decode(file_get_contents("words/nonrated.js",true));
 printf("Learning...");
 $cntWord = "";
 for($i=0;$i<100;$i++){
+    $cntWord = $words[rand(0,sizeof($words)-1)];
     printf($cntWord."\n");
     if(!isset($LastID)){
         $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
@@ -36,8 +37,7 @@ for($i=0;$i<100;$i++){
         //printf("LastID detected:".$LastID."\n");
         $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
     }
-    var_dump($searchResult);
-    sleep(5);
+
     //var_dump($searchResult->{"statuses"}[0]);
     foreach($searchResult->{"statuses"} as $value){
         $str = $value->{"text"};
