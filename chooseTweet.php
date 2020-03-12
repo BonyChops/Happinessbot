@@ -4,13 +4,15 @@ function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $
     srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
-        $minusword = file_get_contents(json_decode("words/negative.js",true));
+        $minusword = json_decode(file_get_contents("words/negative.js",true));
+        $words = json_decode(file_get_contents("words/positive.js",true));
+        $others = json_decode(file_get_contents("words/others.js",true));
+        $nonrated = json_decode(file_get_contents("words/nonrated.js",true)); 
 /*         $minusword = [
             "しね","死ね","最悪","ごみ","ゴミ","コロナ","フェミ","悪い","かす","カス",
             "暴力","性被害","寝取","NTR","クソ","だるい","痛い","寂しい","生理","愚痴",
             "副業","悲惨","なにやってんだよ","あほ","アホ"
         ]; */
-        $words = file_get_contents(json_decode("words/positive.js",true));
 /*         $words = [
             "おいし","美味し","いい天気","眠いな","買い物","好きな人","お腹いっぱい",
             "腹減った","お腹へった","食べたい","おなかすいた","なつかしい","すこ","すき","好き",
