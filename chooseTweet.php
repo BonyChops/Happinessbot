@@ -1,7 +1,7 @@
 
 <?php
 function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $like = false){
-    srand(time());
+    //srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
         $minusword = json_decode(file_get_contents("words/negative.js",true));
