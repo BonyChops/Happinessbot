@@ -47,7 +47,7 @@ for($i=0;$i<1;$i++){
             if($value == 'EOS'){
                 break;
             }
-            list($s,$s2) = sscanf($vslue2,"%s %s");
+            list($s,$s2) = sscanf($value2,"%s %s");
             printf($s2);
             list($type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump) = explode(",", $s2); 
             printf($default."\n");
