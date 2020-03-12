@@ -23,17 +23,17 @@ if(isset($_POST[0])){
         if($_POST[$i] == "happy"){
             array_push($words,$nonrated[$i-$chosei]);
             array_splice($nonrated, $i-$chosei, 1);
-            $chosei--;
+            $chosei -= 1;
         }
         if($_POST[$i] == "minusword"){
             array_push($minusword,$nonrated[$i-$chosei]);
             array_splice($nonrated, $i-$chosei, 1);
-            $chosei--;
+            $chosei -= 1;
         }
         if($_POST[$i] == "others"){
             array_push($others,$nonrated[$i-$chosei]);
             array_splice($others, $i-$chosei, 1);
-            $chosei--;
+            $chosei -= 1;
         }
     }
     file_put_contents("../words/negative.js",json_encode($minusword));
