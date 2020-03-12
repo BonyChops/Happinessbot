@@ -130,3 +130,8 @@ function processTweet($text) {
   
     return $text;
   }
+
+  // html特殊文字を変換する
+  function convertHtmlSpecialCharcter($text) {
+    return htmlspecialchars_decode($text);
+  }
