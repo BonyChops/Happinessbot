@@ -34,22 +34,15 @@ if($json['minId'] == null){
 
 $cntMinId = -1;
 $idsStr = "";
-$searchResult = $objTwitterConection->get("search/tweets",["q" => $botname.' filter:replies', "count" => 100,"lang" => "ja", "result_type" => "recent"]);
+$searchResult = $objTwitterConection->get("statuses/mentions_timeline",["count" => 100,]);
 var_dump($searchResult);
-foreach($searchResult->{"statuses"} as $value){
-    if($value->{"id"} > $minId){
-        $idsStr = $idsStr.$value->{"id"}.',';
-    }
-}
-$idsStr = substr($idsStr,0,-1);
-printf($idsStr);
-$tweetInfo = $objTwitterConection2->get("statuses/lookup",["id" => $idsStr]);
 
-foreach($tweetInfo as $value){
-    printf($value->{"in_reply_to_screen_name"}."\n");
-    if($value->{"in_reply_to_screen_name"} == $botname){
+
+foreach($searchResult as $value){
+    printf($value->{"user"}->{"screen_name"}."\n");
+    if($value->{"user"}->{"screen_name"} != $botname){
         $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-        $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"}]);
+        $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"},"auto_populate_reply_metadata" => true]);
         if($cntMinId > $value->{"id"}){
             $cntMinId = $value->{"id"};
         }
