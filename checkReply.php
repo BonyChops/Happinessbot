@@ -42,8 +42,7 @@ foreach($searchResult->{"statuses"} as $value){
 }
 $idsStr = substr($idsStr,0,-1);
 printf($idsStr);
-$tweetInfo = $objTwitterConection2->get("statuses/lookup",["id" => $value->{"id"}]);
-var_dump($tweetInfo);
+$tweetInfo = $objTwitterConection2->get("statuses/lookup",["id" => $idsStr]);
 foreach($tweetInfo as $value){
     printf($value->{"in_reply_to_screen_name"}."\n");
     if($value->{"in_reply_to_screen_name"} == $botname){
