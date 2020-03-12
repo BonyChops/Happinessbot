@@ -27,10 +27,10 @@ require_once('../../../header.php');
 
 <h2>Happy Tweets<span>幸せをさがそう</span></h2>
 <?php
-$minusword = json_decode(file_get_contents("words/negative.js",true));
-$words = json_decode(file_get_contents("words/positive.js",true));
- $others = json_decode(file_get_contents("words/others.js",true));
-$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); 
+$minusword = json_decode(file_get_contents("../words/negative.js",true));
+$words = json_decode(file_get_contents("../words/positive.js",true));
+ $others = json_decode(file_get_contents("../words/others.js",true));
+$nonrated = json_decode(file_get_contents("../words/nonrated.js",true)); 
 if($minusword == ""){
     $minusword = array();
 }
