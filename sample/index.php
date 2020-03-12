@@ -136,10 +136,10 @@ function chooseTweet($objTwitterConection, $custom = ""){
             $buf = $cntWord;
             //printf($cntWord."\n");
             if(!isset($LastID)){
-                $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
+                $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
             }else{
                 //printf("LastID detected:".$LastID."\n");
-                $searchResult = $objTwitterConection->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
+                $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja","max_id"=>$LastID]);
             }
 
             //var_dump($searchResult->{"statuses"}[0]);
