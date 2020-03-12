@@ -43,7 +43,7 @@ foreach($searchResult as $value){
     if($value->{"user"}->{"screen_name"} != $botname){
         if($value->{"id"} > $minId){
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-            $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"},"auto_populate_reply_metadata" => true]);
+            $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str, "in_reply_to_status_id" => $value->{"id"},"auto_populate_reply_metadata" => true]);
             if($cntMinId > $value->{"id"}){
                 $cntMinId = $value->{"id"};
             }
