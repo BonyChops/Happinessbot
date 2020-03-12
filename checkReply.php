@@ -37,6 +37,7 @@ $idsStr = "";
 $searchResult = $objTwitterConection2->get("search/tweets",["q" => $botname, "count" => 100,"lang" => "ja"]);
 foreach($searchResult->{"statuses"} as $value){
     if($value->{"id"} > $minId){
+        printf($value->{"id"});
         $idsStr = $idsStr.$value->{"id"}.',';
     }
 }
