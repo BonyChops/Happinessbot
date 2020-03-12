@@ -28,7 +28,7 @@ $nonrated = json_decode(file_get_contents("words/nonrated.js",true));
 
 printf("Learning...");
 $cntWord = "";
-for($i=0;$i<100;$i++){
+for($i=0;$i<5;$i++){
     $cntWord = $words[rand(0,sizeof($words)-1)];
     printf($cntWord."\n");
     if(!isset($LastID)){
