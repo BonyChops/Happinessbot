@@ -28,7 +28,7 @@ $nonrated = json_decode(file_get_contents("words/nonrated.js",true));
 
 printf("Learning...");
 $cntWord = "";
-for($i=0;$i<5;$i++){
+for($i=0;$i<1;$i++){
     $cntWord = $words[rand(0,sizeof($words)-1)];
     printf($cntWord."\n");
     if(!isset($LastID)){
@@ -50,6 +50,7 @@ for($i=0;$i<5;$i++){
                 continue;
             }
             list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=sscanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
+            printf($name);
             if(($type == "名詞")||($type == "動詞")){
                 if(
                     (array_search($default,$minusword) === false)&&
