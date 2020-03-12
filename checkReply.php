@@ -56,6 +56,8 @@ foreach($searchResult as $value){
 }
 
 
+if($cntMinId != -1){
+    $json['minId'] = $cntMinId;
+    file_put_contents("login/Id.js",json_encode($json));
+}
 
-$json['minId'] = $cntMinId;
-file_put_contents("login/Id.js",json_encode($json));
