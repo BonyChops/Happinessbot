@@ -33,22 +33,29 @@ if($json['minId'] == null){
 }
 
 $cntMinId = -1;
+$idsStr = "";
 $searchResult = $objTwitterConection2->get("search/tweets",["q" => $botname, "count" => 100,"lang" => "ja"]);
 foreach($searchResult->{"statuses"} as $value){
     if($value->{"id"} > $minId){
-        $tweetInfo = $objTwitterConection2->get("statuses/show",["id" => $value->{"id"}]);
-        if($tweetInfo->{"in_reply_to_screen_name"} == $botname){
-            $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-            $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$tweetInfo->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"}]);
-        }
-        if($cntMinId > $value->{"id"}){
-            $cntMinId = $value->{"id"};
-        }
-        if ($cntMinId == -1){
-            $cntMinId = $value->{"id"};
-        }
+        $idsStr = $idsStr.$value->{"id"}.',';
     }
 }
+$idsStr = substr($idsStr,0,-1);
+$tweetInfo = $objTwitterConection2->get("statuses/lookup",["id" => $value->{"id"}]);
+foreach($tweetInfo as $value){
+    if($value->{"in_reply_to_screen_name"} == $botname){
+        $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+        $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"}]);
+    }
+    if($cntMinId > $value->{"id"}){
+        $cntMinId = $value->{"id"};
+    }
+    if ($cntMinId == -1){
+        $cntMinId = $value->{"id"};
+    }
+}
+
+
 
 $json['minId'] = $cntMinId;
 file_put_contents("login/Id.js",json_encode($json));
