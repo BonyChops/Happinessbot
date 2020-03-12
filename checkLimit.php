@@ -23,3 +23,4 @@ $objTwitterConection = new TwitterOAuth
  $sTwitterConsumerSecret);
 
  $result = $objTwitterConection2->get("application/rate_limit_status");
+ var_dump($result);
