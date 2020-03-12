@@ -20,13 +20,26 @@ $objTwitterConection = new TwitterOAuth
  (
  $sTwitterConsumerKey,
  $sTwitterConsumerSecret);
- $others=array();
- $nonrated=array();
+
 $minusword = json_decode(file_get_contents("words/negative.js",true));
 $words = json_decode(file_get_contents("words/positive.js",true));
  $others = json_decode(file_get_contents("words/others.js",true));
-/*$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); */
-
+$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); 
+if($minusword == ""){
+    $minusword = array();
+}
+if($words == ""){
+    $words = array();
+}
+if($others == ""){
+    $others = array();
+}
+if($nonrated == ""){
+    $nonrated = array();
+}
+var_dump($nonrated);
+var_dump($others);
+sleep(5);
 
 printf("Learning...");
 $cntWord = "";
