@@ -48,7 +48,7 @@ for($i=0;$i<1;$i++){
                 break;
             }
             list($name,$type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump)=sscanf($value2,"%s %s,%s,%s,%s,%s,%s,%s,%s,%s");
-            printf($name);
+            printf($type);
             if(($type == "名詞")||($type == "動詞")){
                 if(
                     (array_search($default,$minusword) === false)&&
