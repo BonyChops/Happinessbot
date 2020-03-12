@@ -20,10 +20,12 @@ $objTwitterConection = new TwitterOAuth
  (
  $sTwitterConsumerKey,
  $sTwitterConsumerSecret);
+ $others=array();
+ $nonrated=array();
 $minusword = json_decode(file_get_contents("words/negative.js",true));
 $words = json_decode(file_get_contents("words/positive.js",true));
-$others = json_decode(file_get_contents("words/others.js",true));
-$nonrated = json_decode(file_get_contents("words/nonrated.js",true));
+/* $others = json_decode(file_get_contents("words/others.js",true));
+$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); */
 
 
 printf("Learning...");
@@ -44,23 +46,22 @@ for($i=0;$i<1;$i++){
         $str = processTweet($str);
         exec('echo \''.$str.'\' | mecab',$array);
         foreach($array as $value2){
-            if($value == 'EOS'){
-                break;
-            }
-            list($s,$s2) = sscanf($value2,"%s %s");
-            printf($s2);
-            list($type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump) = explode(",", $s2); 
-            printf($default."\n");
-            if(($type == "名詞")||($type == "動詞")){
-                if(
-                    (array_search($default,$minusword) === false)&&
-                    (array_search($default,$words) === false)&&
-                    (array_search($default,$others) === false)&&
-                    (array_search($default,$nonrated) === false)
-                ){
-                    array_push($nonrated,$default);
+            if($value != 'EOS'){
+                list($s,$s2) = sscanf($value2,"%s %s");
+                list($type,$dump,$dump,$dump,$dump,$dump,$default,$dump,$dump) = explode(",", $s2); 
+                printf($default."\n");
+                if(($type == "名詞")||($type == "動詞")){
+                    if(
+                        (array_search($default,$minusword) === false)&&
+                        (array_search($default,$words) === false)&&
+                        (array_search($default,$others) === false)&&
+                        (array_search($default,$nonrated) === false)
+                    ){
+                        array_push($nonrated,$default);
+                    }
                 }
             }
+
         }
     }
     $LastID = $value->{"id"};
