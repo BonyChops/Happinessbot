@@ -48,7 +48,7 @@ foreach($nonrated as $value){
     echo '<p>'.$value.'<imput></p><input type="radio" name="'.$value.'" value="happy">幸せ
     <input type="radio" name="'.$value.'" value="minusword">不幸
     <input type="radio" name="'.$value.'" value="others">その他
-    <input type="radio" name="'.$value.'" value="nonrated" selected="selected">未分類</p>';
+    <input type="radio" name="'.$value.'" value="nonrated" checked="checked">未分類</p>';
 }
 echo '</form>'
 ?>
