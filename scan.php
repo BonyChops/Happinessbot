@@ -42,12 +42,7 @@ for($i=0;$i<1;$i++){
     foreach($searchResult->{"statuses"} as $value){
         $str = $value->{"text"};
         $str = processTweet($str);
-        $result = exec('echo \''.$str.'\' | mecab');
-        printf('echo \''.$str.'\' | mecab');
-        $array = explode("\n", $result);
-        $array = array_map('trim', $array);
-        $array = array_filter($array, 'strlen');
-        //var_dump($array);
+        exec('echo \''.$str.'\' | mecab',$array);
         foreach($array as $value2){
             if($value == 'EOS'){
                 break;
