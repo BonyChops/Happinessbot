@@ -15,6 +15,11 @@ $sTwitterConsumerSecret,
 $TwitterAccountInfo['twAccessToken']['oauth_token'],
 $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
 );
+$objTwitterConection2 = new TwitterOAuth
+(
+$sTwitterConsumerKey,
+$sTwitterConsumerSecret
+);
 
 $title="Happy Tweets";
 
@@ -45,7 +50,7 @@ require_once('../../../header.php');
 </section>
 <?php
 if(isset($_GET['search'])){
-    $result = chooseTweet($objTwitterConection, $_GET['search']);
+    $result = chooseTweet($objTwitterConection,$objTwitterConection2, $_GET['search']);
     ?>
 <section>
 <h2>検索結果</h2>
@@ -90,7 +95,7 @@ if(isset($_GET['search'])){
 <?php
 
 
-function chooseTweet($objTwitterConection, $custom = ""){
+function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $like = false){
     srand(time());
     for($i=0; $i<5; $i++){
         $date = date('Y-m-d G:i:s');
