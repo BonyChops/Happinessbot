@@ -24,8 +24,8 @@ $objTwitterConection = new TwitterOAuth
  $nonrated=array();
 $minusword = json_decode(file_get_contents("words/negative.js",true));
 $words = json_decode(file_get_contents("words/positive.js",true));
-/* $others = json_decode(file_get_contents("words/others.js",true));
-$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); */
+ $others = json_decode(file_get_contents("words/others.js",true));
+/*$nonrated = json_decode(file_get_contents("words/nonrated.js",true)); */
 
 
 printf("Learning...");
