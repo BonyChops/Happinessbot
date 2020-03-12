@@ -41,14 +41,17 @@ var_dump($searchResult);
 foreach($searchResult as $value){
     printf($value->{"user"}->{"screen_name"}."\n");
     if($value->{"user"}->{"screen_name"} != $botname){
-        $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-        $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"},"auto_populate_reply_metadata" => true]);
-        if($cntMinId > $value->{"id"}){
-            $cntMinId = $value->{"id"};
+        if($value->{"id"} > $minId){
+            $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+            $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => '@'.$value->{"user"}->{"screen_name"}.' '.$str, "in_reply_to_status_id" => $value->{"id"},"auto_populate_reply_metadata" => true]);
+            if($cntMinId > $value->{"id"}){
+                $cntMinId = $value->{"id"};
+            }
+            if ($cntMinId == -1){
+                $cntMinId = $value->{"id"};
+            }
         }
-        if ($cntMinId == -1){
-            $cntMinId = $value->{"id"};
-        }
+
     }
 }
 
