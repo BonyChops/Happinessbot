@@ -9,4 +9,4 @@ $clientInfo = json_decode(file_get_contents("client_secret.json"));
             'response_type' => 'code',
     );
 
-    return 'https://accounts.google.com/o/oauth2/auth?' . http_build_query($querys);
+    header('location: https://accounts.google.com/o/oauth2/auth?'). http_build_query($querys);
