@@ -68,12 +68,14 @@ if (isset($_GET['code'])) {
   }
 
   $client->authenticate($_GET['code']);
-  $_SESSION[$tokenSessionKey] = $client->getAccessToken();
-  header('Location: ' . $redirect);
+  $accesstoken["accesstoken"] = $client->getAccessToken();
+  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken));
+  printf("OK!");
+  exit;
 }
-
-if (isset($_SESSION[$tokenSessionKey])) {
-  $client->setAccessToken($_SESSION[$tokenSessionKey]);
+$accesstoken = json_decode(file_get_contents( __DIR__ . '/login_google/accesstoken.js'),true);
+if (isset( $accesstoken["accesstoken"])) {
+  $client->setAccessToken($accesstoken["accesstoken"]);
 }
 
 // Check to ensure that the access token was successfully acquired.
@@ -159,7 +161,8 @@ if ($client->getAccessToken()) {
         htmlspecialchars($e->getMessage()));
   }
 
-  $_SESSION[$tokenSessionKey] = $client->getAccessToken();
+  $accesstoken["accesstoken"] = $client->getAccessToken();
+  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken));
 } elseif ($OAUTH2_CLIENT_ID == 'REPLACE_ME') {
   $htmlBody = <<<END
   <h3>Client Credentials Required</h3>
