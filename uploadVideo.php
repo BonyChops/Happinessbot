@@ -11,7 +11,7 @@ var_dump($targetStatus);
 printf("Generating img and voice...");
 exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fill white -annotate 0 "'.$targetStatus->{"str"}.'" happy_back.png tmp.png & google_speech -l ja -o tmp.mp3 "'.$targetStatus->{"str"}.'"');
 printf("Mixing BGM and voice...");
-exec('ffmpeg -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:duration=longest tmp2.mp3');
+exec('ffmpeg -y -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:duration=longest tmp2.mp3');
 printf("Rendering... (1 of 2)");
 exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -pix_fmt yuv420p -r 60 tmp.mp4');
 printf("Rendering... (2 of 2)");
