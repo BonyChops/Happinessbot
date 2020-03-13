@@ -44,7 +44,7 @@ session_start();
  * Please ensure that you have enabled the YouTube Data API for your project.
  */
 
-$clientInfo = json_decode(file_get_contents("client_secret.json"));
+$clientInfo = json_decode(file_get_contents( __DIR__ . '/login_google/client_secret.json'));
 
 $OAUTH2_CLIENT_ID = $clientInfo->{"web"}->{"client_id"};
 $OAUTH2_CLIENT_SECRET = $clientInfo->{"web"}->{"client_secret"};
@@ -81,7 +81,7 @@ if ($client->getAccessToken()) {
   $htmlBody = '';
   try{
     // REPLACE this value with the path to the file you are uploading.
-    $videoPath = __DIR__ ."output.mp4";
+    $videoPath = __DIR__ . '/output.mp4';
 
     // Create a snippet with title, description, tags and category ID
     // Create an asset resource and set its snippet metadata and type.
