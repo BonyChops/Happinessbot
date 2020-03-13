@@ -46,6 +46,7 @@ For example, if you want to make it to tweet every 20 minutes,
 # Quote source
 PHP で Twitter API OAuth 認証 「ログイン」 | WEPICKS! - https://wepicks.net/twitter-restapi-login/  
 Upload Video to YouTube using PHP - CodexWorld - https://www.codexworld.com/upload-video-to-youtube-using-php/
+Videos: insert  |  YouTube Data API  |  Google Developers- https://developers.google.com/youtube/v3/docs/videos/insert
 
 # Package
 TwitterOAuth - https://github.com/abraham/twitteroauth  

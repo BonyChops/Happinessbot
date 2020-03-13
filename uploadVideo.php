@@ -1,5 +1,5 @@
 <?php
-/* $statuses = json_decode(file_get_contents("words/statuses.js",true));
+$statuses = json_decode(file_get_contents("words/statuses.js",true));
 if($statuses == ""){
     printf("There is no statuses.");
     exit;
@@ -18,7 +18,7 @@ exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -r 6
 printf("Rendering... (2 of 2)\n");
 //exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
 exec('melt video_back.mp4 tmp.mp4 -consumer avformat:output.mp4 acodec=libmp3lame vcodec=libx264');
- */
+
 
 
 /**
@@ -89,8 +89,8 @@ if ($client->getAccessToken()) {
     // video category.
     $snippet = new Google_Service_YouTube_VideoSnippet();
     $snippet->setTitle("Test title");
-    $snippet->setDescription("Test description");
-    $snippet->setTags(array("tag1", "tag2"));
+    $snippet->setDescription("選ばれたツイート↓\nhttps://twitter.com/IamHappiestPoop/status/".$targetStatus->{"id"});
+    $snippet->setTags(array("うんちくん", "幸せ", "今日の幸せ"));
 
     // Numeric video category. See
     // https://developers.google.com/youtube/v3/docs/videoCategories/list
@@ -99,7 +99,7 @@ if ($client->getAccessToken()) {
     // Set the video's status to "public". Valid statuses are "public",
     // "private" and "unlisted".
     $status = new Google_Service_YouTube_VideoStatus();
-    $status->privacyStatus = "public";
+    $status->privacyStatus = "unlisted";
 
     // Associate the snippet and status objects with a new video resource.
     $video = new Google_Service_YouTube_Video();
