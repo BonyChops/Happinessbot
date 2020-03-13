@@ -1,8 +1,6 @@
 <?php
 session_start();
 $clientInfo = json_decode(file_get_contents("client_secret.json"));
-//インクルード
-require_once 'config.php';
 
     $querys = array(
             'client_id' => $clientInfo->{"web"}->{"client_id"},
