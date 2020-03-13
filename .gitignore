@@ -2,3 +2,5 @@ login/config.php
 run.sh
 commandetst.php
 vendor/
+composer.json
+composer.lock
