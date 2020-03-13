@@ -6,6 +6,7 @@ if($statuses == ""){
 }
 
 $targetStatus = $statuses[rand(0,sizeof($statuses)-1)];
+var_dump($targetStatus);
 //Run command to generate img and voice (in jp)
 exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fill white -annotate 0 "'.$targetStatus['str'].'" happy_back.png tmp.png & google_speech -l ja -o tmp.mp3 "'.$targetStatus['str'].'"');
 exec('ffmpeg -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:duration=longest tmp2.mp3');
