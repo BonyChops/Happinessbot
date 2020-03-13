@@ -32,7 +32,10 @@ For example, if you want to make it to tweet every 20 minutes,
 ```
 10. Done!
 # Quote source
-PHP で Twitter API OAuth 認証 「ログイン」 | WEPICKS! - https://wepicks.net/twitter-restapi-login/
+PHP で Twitter API OAuth 認証 「ログイン」 | WEPICKS! - https://wepicks.net/twitter-restapi-login/  
+Upload Video to YouTube using PHP - CodexWorld - https://www.codexworld.com/upload-video-to-youtube-using-php/
 
 # Package
-TwitterOAuth - https://github.com/abraham/twitteroauth
+TwitterOAuth - https://github.com/abraham/twitteroauth  
+MeCab - https://taku910.github.io/mecab/  
+desbma / GoogleSpeech - https://github.com/desbma/GoogleSpeech  
