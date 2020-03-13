@@ -8,7 +8,7 @@ if($statuses == ""){
 $targetStatus = $statuses[rand(0,sizeof($statuses)-1)];
 var_dump($targetStatus);
 
-/* //Run command to generate img and voice (in jp)
+//Run command to generate img and voice (in jp)
 printf("Generating img and voice...\n");
 exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fill white -annotate 0 "'.$targetStatus->{"str"}.'" happy_back.png tmp.png & google_speech -l ja -o tmp.mp3 "'.$targetStatus->{"str"}.'"');
 printf("Mixing BGM and voice...\n");
@@ -18,7 +18,7 @@ exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -r 6
 printf("Rendering... (2 of 2)\n");
 //exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
 exec('melt video_back.mp4 tmp.mp4 -consumer avformat:output.mp4 acodec=libmp3lame vcodec=libx264');
- */
+
 
 
 /**
@@ -90,8 +90,17 @@ if ($client->getAccessToken()) {
     // This example sets the video's title, description, keyword tags, and
     // video category.
     $snippet = new Google_Service_YouTube_VideoSnippet();
-    $snippet->setTitle("Test title");
-    $snippet->setDescription("選ばれたツイート↓\nhttps://twitter.com/IamHappiestPoop/status/".$targetStatus->{"id"});
+    $time = json_decode(file_get_contents( __DIR__ . '/time.js'),true);
+    if (isset( $time["time"])) {
+        $time["time"]++;
+        $timecnt=$time["time"];
+    }else{
+        $timecnt=0;
+    }
+    $snippet->setTitle("今日の幸せ #".$timecnt);
+    file_put_contents( __DIR__ . '/login_google/time.js',json_encode($time));
+    $snippet->setDescription("今日の選ばれたツイート↓\nhttps://twitter.com/IamHappiestPoop/status/".$targetStatus->{"id"});
+    
     $snippet->setTags(array("うんちくん", "幸せ", "今日の幸せ"));
 
     // Numeric video category. See
