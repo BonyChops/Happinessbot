@@ -11,6 +11,8 @@ var_dump($targetStatus);
 //Run command to generate img and voice (in jp)
 printf("Generating img and voice...\n");
 exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fill white -annotate 0 "'.$targetStatus->{"str"}.'" happy_back.png tmp.png & google_speech -l ja -o tmp.mp3 "'.$targetStatus->{"str"}.'"');
+printf("Volume up...\n");
+exec('mp3gain -g 9 tmp.mp3');
 printf("Mixing BGM and voice...\n");
 exec('ffmpeg -y -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:duration=longest tmp2.mp3');
 printf("Rendering... (1 of 2)\n");
@@ -96,6 +98,8 @@ if ($client->getAccessToken()) {
         $timecnt=$time["time"];
     }else{
         $timecnt=0;
+        $time = array();
+        $time["time"] = 0;
     }
     $snippet->setTitle("今日の幸せ #".$timecnt);
     file_put_contents( __DIR__ . '/login_google/time.js',json_encode($time));
