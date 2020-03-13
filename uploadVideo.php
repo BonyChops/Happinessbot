@@ -15,4 +15,4 @@ exec('ffmpeg -y -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:durati
 printf("Rendering... (1 of 2)");
 exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -pix_fmt yuv420p -r 60 tmp.mp4');
 printf("Rendering... (2 of 2)");
-exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "concat=n=2" output.mp4');
+exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
