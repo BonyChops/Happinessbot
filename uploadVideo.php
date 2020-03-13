@@ -13,6 +13,7 @@ exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fil
 printf("Mixing BGM and voice...");
 exec('ffmpeg -y -i back_bgm2.wav -i tmp.mp3 -filter_complex amix=inputs=2:duration=longest tmp2.mp3');
 printf("Rendering... (1 of 2)");
-exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -pix_fmt yuv420p -r 60 tmp.mp4');
+exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -r 60 -ar 48000 tmp.mp4');
 printf("Rendering... (2 of 2)");
-exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
+//exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
+exit('melt video_back.mp4 tmp.mp4 -consumer avformat:output3.mp4 acodec=libmp3lame vcodec=libx264');
