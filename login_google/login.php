@@ -1,12 +1,12 @@
 <?php
 session_start();
- 
+$clientInfo = json_decode(file_get_contents("client_secret.json"));
 //インクルード
 require_once 'config.php';
 
     $querys = array(
-            'client_id' => HogeUtil::getGoogleClientId(),
-            'redirect_uri' => HogeUtil::getGoogleClientCallBack(),
+            'client_id' => $clientInfo->{"web"}->{"client_id"},
+            'redirect_uri' => $clientInfo->{"web"}->{"redirect_uris"}[0],//Choose
             'scope' => 'https://www.googleapis.com/auth/userinfo.profile',
             'response_type' => 'code',
     );
