@@ -4,3 +4,5 @@ commandetst.php
 vendor/
 composer.json
 composer.lock
+login_google/config.php
+login_google/client_secret.json
