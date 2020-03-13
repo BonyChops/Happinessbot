@@ -8,7 +8,7 @@ if($statuses == ""){
 $targetStatus = $statuses[rand(0,sizeof($statuses)-1)];
 var_dump($targetStatus);
 
-//Run command to generate img and voice (in jp)
+/* //Run command to generate img and voice (in jp)
 printf("Generating img and voice...\n");
 exec('convert -font SourceHanSerif-Heavy.otf -gravity center -pointsize 100 -fill white -annotate 0 "'.$targetStatus->{"str"}.'" happy_back.png tmp.png & google_speech -l ja -o tmp.mp3 "'.$targetStatus->{"str"}.'"');
 printf("Mixing BGM and voice...\n");
@@ -18,7 +18,7 @@ exec('ffmpeg -y -r 60 -loop 1 -t 8.3 -i tmp.png -i tmp2.mp3 -vcodec libx264 -r 6
 printf("Rendering... (2 of 2)\n");
 //exec('ffmpeg -y -i video_back.mp4 -i tmp.mp4 -filter_complex "[0:v] [0:a] [1:v] [1:a] concat=n=2" output.mp4');
 exec('melt video_back.mp4 tmp.mp4 -consumer avformat:output.mp4 acodec=libmp3lame vcodec=libx264');
-
+ */
 
 
 /**
