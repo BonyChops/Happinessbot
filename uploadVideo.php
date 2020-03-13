@@ -5,6 +5,8 @@ if(!isset($statuses)){
         printf("There is no statuses.");
         exit;
     }
+    $targetStatus = $statuses[rand(0,sizeof($statuses)-1)];
+    var_dump($targetStatus);
 }
 
 /**
