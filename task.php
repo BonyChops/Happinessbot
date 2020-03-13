@@ -27,4 +27,10 @@ $objTwitterConection = new TwitterOAuth
 require_once("chooseTweet.php");
 $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
 $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str]);
-
+$statuses = json_decode(file_get_contents("words/statuses.js",true));
+if($statuses == ""){
+    $statuses = array();
+}
+$statusInfo = ["str" => $str,"id" => $objTwUserInfo->{"id"}];
+array_push($statuses,$statusInfo);
+file_put_contents("words/statuses.js",json_encode($statuses));
