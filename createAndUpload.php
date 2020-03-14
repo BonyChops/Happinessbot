@@ -46,7 +46,10 @@ printf("Rendering... (2 of 2)\n");
 exec('melt video_back.mp4 tmp.mp4 -consumer avformat:output.mp4 acodec=libmp3lame vcodec=libx264');
 
 require_once('uploadVideo.php');
-
+printf("Wait 2 min to post a tweet...");
+sleep(60);
+printf("Wait 1 min to post a tweet...");
+sleep(60);
 $str = "動画アップロードしました！\n".$uploadedTITLE."\n"."https://youtu.be/".$uploadedID;
 $objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str]);
 unlink("words/statuses.js");
