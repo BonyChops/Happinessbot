@@ -53,3 +53,4 @@ TwitterOAuth - https://github.com/abraham/twitteroauth
 MeCab - https://taku910.github.io/mecab/  
 desbma / GoogleSpeech - https://github.com/desbma/GoogleSpeech  
 googleapis / google-api-php-client - https://github.com/googleapis/google-api-php-client
+teamreflex / DiscordPHP - https://github.com/teamreflex/DiscordPHP
