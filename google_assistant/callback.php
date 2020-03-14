@@ -1,6 +1,6 @@
 <?php
-require_once 'login/config.php';
-require_once 'vendor/autoload.php';
+require_once '../login/config.php';
+require_once '../vendor/autoload.php';
 require_once "../chooseTweet.php";
 //インポート
 use Abraham\TwitterOAuth\TwitterOAuth;
