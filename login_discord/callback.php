@@ -2,7 +2,7 @@
 require_once '../vendor/autoload.php';
 require_once 'accesstoken.php';
 require_once '../login/config.php';
-require_once "../chooseTweet.php";
+
 //インポート
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -32,6 +32,7 @@ $discord->on('ready', function ($discord) {
 
     // Listen for events here
     $discord->on('message', function ($message) {
+        require_once "../chooseTweet.php";
         if ($message->content === "/happy") {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
