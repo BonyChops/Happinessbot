@@ -5,7 +5,7 @@ require_once 'accesstoken.php';
 
 
 $discord = new \Discord\Discord([
-    'token' => 'your-auth-token', // ←作成したBotのTokenを入力してね
+    'token' => $accesstoken , // ←作成したBotのTokenを入力してね
 ]);
 
 $discord->on('ready', function ($discord) {
