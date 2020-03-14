@@ -13,7 +13,7 @@ $discord->on('ready', function ($discord) {
 
     // Listen for events here
     $discord->on('message', function ($message) {
-        if ($message->author->id !== $botUser->id) {
+        if ($message->content === "/happy") {
             $message->reply('こんにちはーっ！');
         }
     });
