@@ -2,6 +2,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !(/sample*)
+RewriteCond %{REQUEST_URI} !(/login_discord*)
 RewriteRule ^(.*)$ access_denied.php
 RewriteRule "/pages/(.+)" "/page.php?page=$1" [QSA]
 </IfModule>
