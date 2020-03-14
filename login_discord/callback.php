@@ -2,6 +2,7 @@
 require_once '../vendor/autoload.php';
 require_once 'accesstoken.php';
 require_once '../login/config.php';
+require_once "../chooseTweet.php";
 //インポート
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -19,7 +20,7 @@ $objTwitterConection = new TwitterOAuth
  (
  $sTwitterConsumerKey,
  $sTwitterConsumerSecret);
- require_once("chooseTweet.php");
+
 
 
 $discord = new \Discord\Discord([
