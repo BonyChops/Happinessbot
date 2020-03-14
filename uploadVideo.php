@@ -100,7 +100,7 @@ if ($client->getAccessToken()) {
     // Set the video's status to "public". Valid statuses are "public",
     // "private" and "unlisted".
     $status = new Google_Service_YouTube_VideoStatus();
-    $status->privacyStatus = "unlisted";
+    $status->privacyStatus = "public";
 
     // Associate the snippet and status objects with a new video resource.
     $video = new Google_Service_YouTube_Video();
@@ -149,8 +149,9 @@ if ($client->getAccessToken()) {
     $htmlBody .= sprintf('<li>%s (%s)</li>',
         $status['snippet']['title'],
         $status['id']);
-
     $htmlBody .= '</ul>';
+    $uploadedID = $status['id'];
+    $uploadedTITLE = $status['snippet']['title'];
 
   } catch (Google_Service_Exception $e) {
     $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',

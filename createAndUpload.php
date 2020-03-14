@@ -1,4 +1,28 @@
 <?php
+//インクルード
+require_once 'login/config.php';
+require_once 'vendor/autoload.php';
+ 
+//インポート
+use Abraham\TwitterOAuth\TwitterOAuth;
+
+$TwitterAccountInfo = json_decode(file_get_contents('login/'.$accesstoken_filename),true);
+
+$objTwitterConection = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret,
+ $TwitterAccountInfo['twAccessToken']['oauth_token'],
+ $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
+ );
+
+ $objTwitterConection2 = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret);
+
+
+
 $statuses = json_decode(file_get_contents("words/statuses.js",true));
 if($statuses == ""){
     printf("There is no statuses.");
@@ -22,3 +46,7 @@ printf("Rendering... (2 of 2)\n");
 exec('melt video_back.mp4 tmp.mp4 -consumer avformat:output.mp4 acodec=libmp3lame vcodec=libx264');
 
 require_once('uploadVideo.php');
+
+$str = "動画アップロードしました！\n".$uploadedTITLE."\n"."https://youtu.be/".$uploadedID;
+$objTwUserInfo = $objTwitterConection->post("statuses/update",["status" => $str]);
+unlink("words/statuses.js");
