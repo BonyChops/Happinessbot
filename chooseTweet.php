@@ -1,6 +1,6 @@
 
 <?php
-function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $like = false){
+function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $like = false, $displayMessage = true){
     //srand(time());
     for($i=0; $i<10; $i++){
         $date = date('Y-m-d G:i:s');
@@ -41,7 +41,9 @@ function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $
         }
         if($cntWord != $buf){
             $buf = $cntWord;
-            printf($cntWord."\n");
+            if($displayMessage == true){
+                printf($cntWord."\n");
+            }
             if(!isset($LastID)){
                 $searchResult = $objTwitterConection2->get("search/tweets",["q" => $cntWord, "count" => 100,"lang" => "ja"]);
             }else{
@@ -65,10 +67,14 @@ function chooseTweet($objTwitterConection, $objTwitterConection2,$custom = "", $
                         if($no == 0){
                             $str = $value->{"text"};
                             $str = processTweet($str);
-                            printf($str."\n");
+                            if($displayMessage == true){
+                                printf($str."\n");
+                            }
                             if (($str != "")&&(isset($str))){
                                 if($like == true){
-                                    printf("Like!"."\n");
+                                    if($displayMessage == true){
+                                        printf("Like!"."\n");
+                                    }
                                     $likeResult = $objTwitterConection->post("favorites/create",["id" => $value->{"id"}]);
                                 }
                                 return $str;

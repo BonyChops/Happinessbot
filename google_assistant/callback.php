@@ -20,7 +20,7 @@ $objTwitterConection = new TwitterOAuth
  $sTwitterConsumerKey,
  $sTwitterConsumerSecret);
 
- $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+ $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false,false);
 $arr = array(
     'fulfillment_text' => $str
 );
