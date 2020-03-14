@@ -89,7 +89,7 @@ if ($client->getAccessToken()) {
     }
     $snippet->setTitle("今日の幸せ #".$timecnt);
     file_put_contents( __DIR__ . '/login_google/time.js',json_encode($time));
-    $snippet->setDescription("今日の選ばれたツイート↓\nhttps://twitter.com/IamHappiestPoop/status/".$targetStatus->{"id"}."\n\n-----------以下開発者より-----------\nこのチャンネルはbotにより自動で投稿しています。\nYouTube Data APIのテストとしてBony_Chopsが運営しております。\nBony_Chops\nhttps://www.youtube.com/BonyChops");
+    $snippet->setDescription("今日の選ばれたツイート↓\nhttps://twitter.com/IamHappiestPoop/status/".$targetStatus->{"id"}."\n\n-----------以下開発者より-----------\nこのチャンネルはbotにより自動で投稿しています。\nYouTube Data APIのテストとしてBony_Chopsが運営しております。\n\nBony_Chops\nhttps://www.youtube.com/BonyChops");
     
     $snippet->setTags(array("うんちくん", "幸せ", "今日の幸せ"));
 
