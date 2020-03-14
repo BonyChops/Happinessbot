@@ -3,6 +3,7 @@
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !(/sample*)
 RewriteCond %{REQUEST_URI} !(/login_discord*)
+RewriteCond %{REQUEST_URI} !(/google_assistant*)
 RewriteRule ^(.*)$ access_denied.php
 RewriteRule "/pages/(.+)" "/page.php?page=$1" [QSA]
 </IfModule>
