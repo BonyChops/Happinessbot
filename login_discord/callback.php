@@ -1,7 +1,25 @@
 <?php
 require_once '../vendor/autoload.php';
 require_once 'accesstoken.php';
+require_once '../login/config.php';
+//インポート
+use Abraham\TwitterOAuth\TwitterOAuth;
 
+$TwitterAccountInfo = json_decode(file_get_contents('login/'.$accesstoken_filename),true);
+
+$objTwitterConection = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret,
+ $TwitterAccountInfo['twAccessToken']['oauth_token'],
+ $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
+ );
+
+ $objTwitterConection2 = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret);
+ require_once("chooseTweet.php");
 
 
 $discord = new \Discord\Discord([
@@ -14,7 +32,8 @@ $discord->on('ready', function ($discord) {
     // Listen for events here
     $discord->on('message', function ($message) {
         if ($message->content === "/happy") {
-            $message->reply('こんにちはーっ！');
+            $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+            $message->reply($str);
         }
     });
 });
