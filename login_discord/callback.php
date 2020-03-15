@@ -33,10 +33,9 @@ $discord->on('ready', function ($discord) {
     // Listen for events here
     $discord->on('message', function ($message) {
         global $objTwitterConection,$objTwitterConection2;
-        if ($message->content === "/happy") {
+        if (($message->content === "/happy")||($message->channel_id==688615651803398162)) {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
-            echo $message->channel_id;
         }
     });
 });
