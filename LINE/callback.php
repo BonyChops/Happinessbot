@@ -45,7 +45,10 @@ $response_format_text = [[
     "type" => "text",
     "text" => $str
 ]];
-$result = sending_messages($accesstoken, $replyToken, $response_format_text);
+if((($sourceType != "group")&&($sourceType != "room"))||(strpos($message_text,"/happy") !== FALSE)){
+    $result = sending_messages($accesstoken, $replyToken, $response_format_text);
+}
+
 //echo $result;
 function sending_messages($accessToken, $replyToken, $response_format_text){
     //レスポンスフォーマット
