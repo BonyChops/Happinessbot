@@ -18,8 +18,8 @@ if ($message_type == "text"){
 }
 $recieve_data = $json_object->{"events"}[0]->{"postback"}->{"data"};
 
-$str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-
+//$str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+$str = "test";
 $response_format_text = [[
     "type" => "text",
     "text" => $str
