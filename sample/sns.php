@@ -11,5 +11,5 @@
 <section>
 <h2>仕組み</h2>
 <p class="c">Githubにて配布しております。</p>
-<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fa fa-github"></a></p>
+<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fab fa-github"></a></p>
 </section>
