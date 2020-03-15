@@ -24,7 +24,7 @@ if($statuses == ""){
     $str = "ごめんなさい、今は無理です。。。";
 }else{
     $targetStatus = $statuses[rand(0,sizeof($statuses)-1)];
-    $str = "a";//$targetStatus->{"str"};
+    $str = $targetStatus->{"str"};
 }
 
 
