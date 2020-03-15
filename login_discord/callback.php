@@ -37,10 +37,9 @@ $discord->on('ready', function ($discord) {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
         }
-        if ($message->channel_id==688615651803398162) {
+        if (($message->channel_id==688615651803398162)&&($message->author->username != '幸せうんちくんbot')) {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
-            echo $message->author->username;
         }
     });
 });
