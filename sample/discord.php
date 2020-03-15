@@ -41,7 +41,11 @@ require_once('../../../header.php');
 <p class="c">僕をDiscordで呼び出せるようになったよ！やったね！<br>
 使い方は会話中に/happyって言うだけ！</p>
 <p class="c"><img src="discord.png"></p>
-<p class="c">招待はここから↓</p>
+<h3 class="c">うんちくんお試しサーバー</h3>
+<p class="c">うんちくんとおしゃべりできるお試しサーバーです<br>どんなに喋っても怒られません</p>
+<p class="c"><a target="_blank" href="https://discordapp.com/api/oauth2/authorize?client_id=688390082616623131&permissions=2048&redirect_uri=https%3A%2F%2Fbonychops.com%2Fexperiment%2FHappinessbot%2Flogin_discord%2Fcallback.php&scope=bot" class="fab fa-discord"></a></p>
+<p class="c"><a target="_blank" href="https://discord.gg/cHNrqM5" class="fab fa-discord"></a></p>
+<h3 class="c">自分のサーバーに招待する</h3>
 <p class="c"><a target="_blank" href="https://discordapp.com/api/oauth2/authorize?client_id=688390082616623131&permissions=2048&redirect_uri=https%3A%2F%2Fbonychops.com%2Fexperiment%2FHappinessbot%2Flogin_discord%2Fcallback.php&scope=bot" class="fab fa-discord"></a></p>
 
 </section>
@@ -57,7 +61,7 @@ require_once('../../../header.php');
 <section>
 <h2>仕組み</h2>
 <p class="c">Githubにて配布しております。</p>
-<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fa fa-github"></a></p>
+<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fab fa-github"></a></p>
 </section>
 
 
