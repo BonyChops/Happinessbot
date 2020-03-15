@@ -36,6 +36,7 @@ $discord->on('ready', function ($discord) {
         if ($message->content === "/happy") {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
+            echo $message->channel_id;
         }
     });
 });

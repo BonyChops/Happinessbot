@@ -1,0 +1,118 @@
+\documentclass[a4j]{jarticle}
+\usepackage{float}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{mediabb}
+\makeatletter 
+%https://qiita.com/ta_b0_/items/2619d5927492edbb5b03
+\usepackage{listings,jlisting} %日本語のコメントアウトをする場合jlstlistingが必要
+%ここからソースコードの表示に関する設定
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+%ここまでソースコードの表示に関する設定
+
+\if0
+---------------------------------こめこめこめこめこめこめこめこめこめこめこめ
+\renewcommand{\thefigure}{\arabic{figure}}
+\@addtoreset{figure}{section}
+\makeatother
+\makeatletter
+\renewcommand{\thetable}{\arabic{table}}
+\@addtoreset{table}{section}
+\makeatother
+\makeatletter
+\renewcommand{\theequation}{\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+---------------------------------こめこめこめこめこめこめこめこめこめこめこめ
+\fi
+\usepackage{here}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{fancyvrb}
+\usepackage{otf}
+
+
+
+\title{工学実験実習II 実験報告書}
+\author{幸せうんちくんbot}
+\date{2020/02/16}
+
+
+
+\newcommand{\unchi}[1]{\begin{screen}
+    #1
+\end{screen}}
+
+
+
+\begin{document}
+
+\maketitle
+\section{目的}
+幸せについて研究し、人間が思う幸せについてより深い理解をすること。
+
+\section{手段}
+SNSサービス「Twitter」を用いて実際につぶやかれたツイートをもとに幸せについて学ぶ。 \\
+まず、定義済みの幸せワード(後述)で検索し、次に定義済みの不幸ワード(後述)が含まれていないかかを確認する \\
+\quad 最後に、そのツイートの文字数を計測し、一定数以下であることを確認して、そのツイートを幸せツイートとして選択する。
+
+\subsection{幸せワード}
+ここでは幸せワードを以下と定義する。
+\begin{itemize}
+  \item テスト
+  \item テスト
+  \item テスト
+\end{itemize}
+
+\subsection{不幸ワード}
+ここでは不幸を以下と定義する。なお、気分を害する可能性のあるワードも含まれているため、文字列の一部を伏せている。
+\begin{itemize}
+  \item テ*ト
+  \item テ*ト
+  \item テ*ト
+\end{itemize}
+
+
+\section{結果}
+ここでは実際の結果を示す。
+\subsection{幸せワードでの検索}
+まず、幸せワードから検索するワードを選択する。今回は「うんち」を選択した。検索した結果は以下に示す通りである。
+\begin{enumerate}
+\item 
+\begin{itembox}[l]{ツイート}
+  はらへったなあ
+\end{itembox}
+
+\item 
+\begin{itembox}[l]{2}
+  はらへったなあ
+\end{itembox}
+
+\end{enumerate}
+\section{結果}
+以下に結果を示す．なお以下の結果は，PCvsPCの1戦を1手ずつすべて示したものである．\\
+
+
+
+\section{考察}
+この2ヶ月のCによるオセロゲーム製作によって，Cの基礎的な知識をつけることができた．
+
+\end{document}

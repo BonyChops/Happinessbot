@@ -6,7 +6,10 @@ This bot is not completed! Please try this at your own risk, but I don't recomme
 このbotは完成していません！試す場合は自己責任でお願いしますが、おすすめはしません。実際の動作の確認は以下のサンプルボットをどうぞ。
 
 # Sample
-幸せうんちくんbot - https://twitter.com/IamHappiestPoop
+## 幸せうんちくんbot
+Twitter - https://twitter.com/IamHappiestPoop  
+YouTube - https://www.youtube.com/channel/UCtpBLAoNCGs32cnn8Mu06-A 
+Discord - https://bonychops.com/experiment/Happinessbot/sample/discord.php
 
 # How it works
 First, this bot will search for one happy word that bot chose. Then it checks it doesn't include any unhappy word. Then tweet it.
