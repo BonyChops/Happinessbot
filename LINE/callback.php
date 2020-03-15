@@ -3,6 +3,29 @@ require_once '../vendor/autoload.php';
 require_once 'accesstoken.php';
 require_once '../login/config.php';
 require_once "../chooseTweet.php";
+
+//インクルード
+require_once 'login/config.php';
+require_once 'vendor/autoload.php';
+ 
+//インポート
+use Abraham\TwitterOAuth\TwitterOAuth;
+
+$TwitterAccountInfo = json_decode(file_get_contents('login/'.$accesstoken_filename),true);
+
+$objTwitterConection = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret,
+ $TwitterAccountInfo['twAccessToken']['oauth_token'],
+ $TwitterAccountInfo['twAccessToken']['oauth_token_secret']
+ );
+
+ $objTwitterConection2 = new TwitterOAuth
+ (
+ $sTwitterConsumerKey,
+ $sTwitterConsumerSecret);
+
 //ユーザーからのメッセージ取得
 $json_string = file_get_contents('php://input');
 $json_object = json_decode($json_string);
