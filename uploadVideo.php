@@ -56,14 +56,14 @@ if (isset($_GET['code'])) {
   }
 
   $client->authenticate($_GET['code']);
-  $accesstoken["accesstoken"] = $client->getAccessToken();
-  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken));
+  $accesstoken_YT["accesstoken"] = $client->getAccessToken();
+  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken_YT));
   printf("OK!");
   exit;
 }
-$accesstoken = json_decode(file_get_contents( __DIR__ . '/login_google/accesstoken.js'),true);
-if (isset( $accesstoken["accesstoken"])) {
-  $client->setAccessToken($accesstoken["accesstoken"]);
+$accesstoken_YT = json_decode(file_get_contents( __DIR__ . '/login_google/accesstoken.js'),true);
+if (isset( $accesstoken_YT["accesstoken"])) {
+  $client->setAccessToken($accesstoken_YT["accesstoken"]);
 }
 
 // Check to ensure that the access token was successfully acquired.
@@ -161,8 +161,8 @@ if ($client->getAccessToken()) {
         htmlspecialchars($e->getMessage()));
   }
 
-  $accesstoken["accesstoken"] = $client->getAccessToken();
-  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken));
+  $accesstoken_YT["accesstoken"] = $client->getAccessToken();
+  file_put_contents( __DIR__ . '/login_google/accesstoken.js',json_encode($accesstoken_YT));
 } elseif ($OAUTH2_CLIENT_ID == 'REPLACE_ME') {
   $htmlBody = <<<END
   <h3>Client Credentials Required</h3>
