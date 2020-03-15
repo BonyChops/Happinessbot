@@ -80,7 +80,7 @@ if(isset($_GET['search'])){
   <a class="twitter-timeline" data-width="1000" data-height="500" data-theme="dark" href="https://twitter.com/IamHappiestPoop?ref_src=twsrc%5Etfw">Tweets by IamHappiestPoop</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 </section>
-<?php require_once('sns.php'); ?>
+<?php require_once('sns_unchi.php'); ?>
 
 <!--/contents-->
 </div>

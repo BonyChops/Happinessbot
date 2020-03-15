@@ -49,7 +49,7 @@ require_once('../../../header.php');
 
 </section>
 
-<?php require_once('sns.php'); ?>
+<?php require_once('sns_unchi.php'); ?>
 
 
 
