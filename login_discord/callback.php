@@ -33,9 +33,14 @@ $discord->on('ready', function ($discord) {
     // Listen for events here
     $discord->on('message', function ($message) {
         global $objTwitterConection,$objTwitterConection2;
-        if (($message->content === "/happy")||($message->channel_id==688615651803398162)) {
+        if ($message->content === "/happy") {
             $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
             $message->reply($str);
+        }
+        if ($message->channel_id==688615651803398162) {
+            $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+            $message->reply($str);
+            echo $message->author->username;
         }
     });
 });
