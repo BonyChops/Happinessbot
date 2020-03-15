@@ -37,7 +37,7 @@ require_once('../../../header.php');
 
 <section>
 
-<h2>Happy Tweets<span>幸せをさがそう</span></h2>
+<h2>Happy Tweets<span><i class="fas fa-search"></i>幸せをさがそう</span></h2>
 <p class="c">近年、物騒なツイートがいいねやRTを稼いでいます。ですがそれでいいのでしょうか。<br>
 そんなTLで心が荒んでしまったあなた。ぜひここで幸せなツイートを探してみましょう。<br>
 適当な単語を入れてみてください。</p>
