@@ -19,7 +19,7 @@ if ($message_type == "text"){
 $recieve_data = $json_object->{"events"}[0]->{"postback"}->{"data"};
 
 //$str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-$statuses = json_decode(file_get_contents("words/statuses.js",true));
+$statuses = json_decode(file_get_contents("../words/statuses.js",true));
 if($statuses == ""){
     $str = "ごめんなさい、今は無理です。。。";
 }else{
