@@ -1,6 +1,7 @@
 
 <IfModule mod_rewrite.c>
 RewriteEngine on
+RewriteCond %{REMOTE_ADDR} !^114\.149\.82\.98$
 RewriteCond %{REQUEST_URI} !(/sample*)
 RewriteCond %{REQUEST_URI} !(/login_discord*)
 RewriteCond %{REQUEST_URI} !(/google_assistant*)
