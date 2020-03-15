@@ -49,19 +49,7 @@ require_once('../../../header.php');
 
 </section>
 
-<section>
-<h2>その他のソーシャルアカウント</h2>
-<p class="c">気軽にのぞいてね！</p>
-<p class="c"><a target="_blank" href="https://twitter.com/IamHappiestPoop" class="fab fa-twitter"></a>
-<a target="_blank" href="https://www.youtube.com/channel/UCtpBLAoNCGs32cnn8Mu06-A" class="fab fa-youtube"></a>
-</section>
-
-
-<section>
-<h2>仕組み</h2>
-<p class="c">Githubにて配布しております。</p>
-<p class="c"><a target="_blank" href="https://github.com/BonyChops/Happinessbot" class="fab fa-github"></a></p>
-</section>
+<?php require_once('sns.php'); ?>
 
 
 
