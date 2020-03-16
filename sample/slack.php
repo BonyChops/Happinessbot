@@ -49,9 +49,6 @@ require_once('../../../header.php');
 <p class="c">ビジネスにユーモアを</p>
 <h3 class="c">うんちくんの招待ありがとうございます！</h3>
 <p class="c">うんちくんとのおしゃべりをお楽しみください。</p>
-<p class="c"><img src="slack2.png"></p>
-<h3 class="c">コマンドから呼び出してください</h3>
-<p class="c"><img src="slack.png"></p>
 <h3 class="c">Slackにうんちくんを招待する</h3>
 <p class="c"><a target="_blank" href="https://slack.com/oauth/v2/authorize?client_id=1001639938256.991566717393&scope=commands" class="fab fa-slack"></a></p>
 
