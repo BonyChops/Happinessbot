@@ -1,5 +1,5 @@
 <?php
-$userId = $_GET['user_id'];
+$userId = $_POST['user_id'];
 require_once '../login/config.php';
 require_once '../vendor/autoload.php';
  
