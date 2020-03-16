@@ -9,7 +9,7 @@ if (!$_GET["code"]) {
 }
 
 // アクセストークン取得
-$url = "https://slack.com/api/oauth.access";
+$url = "https://slack.com/api/oauth.v2.access";
 
 
 $data = array(
