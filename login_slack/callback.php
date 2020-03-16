@@ -15,8 +15,7 @@ $url = "https://slack.com/api/oauth.access";
 $data = array(
     "client_id" => $slackclientid,
     "client_secret" => $slackclientsecret,
-    "code" => $_GET["code"],
-    "redirect_uri" => 'https://bonychops.com/experiment/Happinessbot/login_slack/callback.php'
+    "code" => $_GET["code"]
 );
 
 
@@ -37,4 +36,4 @@ if (empty($result) || isset($result["error"])) {
     exit;
 }
 
-print_r($result);
+header("Location:https://bonychops.com/experiment/Happinessbot/sample/slack.php");
