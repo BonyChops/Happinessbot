@@ -15,7 +15,7 @@ $redirect_url = "https://bonychops.com/BonyShopper/LINE/line_callback.php";
 if($_GET['redirect_url']) $redirect_url = $redirect_url.'?redirect_url='.urlencode($_GET['redirect_url']);
 
 $data = array(
-    "client_id" => $redirect_uri,
+    "client_id" => $slackclientid,
     "client_secret" => $slackclientsecret,
     "code" => $_GET["code"],
     "redirect_uri" => 'https://bonychops.com/experiment/Happinessbot/login_slack/callback.php'
