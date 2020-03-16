@@ -4,6 +4,7 @@ RewriteEngine on
 RewriteCond %{REMOTE_ADDR} !^114\.149\.82\.98$
 RewriteCond %{REQUEST_URI} !(/sample*)
 RewriteCond %{REQUEST_URI} !(/login_discord*)
+RewriteCond %{REQUEST_URI} !(/login_slack*)
 RewriteCond %{REQUEST_URI} !(/google_assistant*)
 RewriteCond %{REQUEST_URI} !(/LINE*)
 RewriteRule ^(.*)$ access_denied.php

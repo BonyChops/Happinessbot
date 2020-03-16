@@ -11,8 +11,6 @@ if (!$_GET["code"]) {
 // アクセストークン取得
 $url = "https://slack.com/api/oauth.access";
 
-$redirect_url = "https://bonychops.com/BonyShopper/LINE/line_callback.php";
-if($_GET['redirect_url']) $redirect_url = $redirect_url.'?redirect_url='.urlencode($_GET['redirect_url']);
 
 $data = array(
     "client_id" => $slackclientid,
