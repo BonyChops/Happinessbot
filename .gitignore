@@ -8,3 +8,4 @@ login_google/config.php
 login_google/client_secret.json
 login_discord/accesstoken.php
 LINE/accesstoken.php
+login_slack/accesstoken.php
