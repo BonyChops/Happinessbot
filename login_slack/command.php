@@ -28,14 +28,9 @@ $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false,false);
 
 
 $format = [
-    "blocks"=> [
-        [
-            "type"=> "section",
-            "text"=> [
-                "type"=> "mrkdwn",
-                "text"=> "<@".$userId.">, ".$str
-            ]
-        ]
-    ]
+    "response_type"=> "in_channel",
+    "text"=> "<@".$userId.">, ".$str
 ];
+
+header("Content-type: application/json; charset=utf-8");
 echo json_encode($format);
