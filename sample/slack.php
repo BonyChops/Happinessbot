@@ -39,12 +39,12 @@ require_once('../../../header.php');
 
 <h2>うんちくん for <i class="fab fa-slack"></i>Slack</h2>
 <p class="c">ビジネスにユーモアを</p>
-<p class="c"><img src="LINE.png"></p>
-<h3 class="c">グループにも行くよ！</h3>
+<p class="c"><img src="slack2.png"></p>
+<h3 class="c">コマンドから呼び出してください</h3>
 <p class="c">※ただし会話に/happyを入れないと反応しません</p>
-<p class="c"><img src="LINE2.png"></p>
-<h3 class="c">うんちくんを登録する</h3>
-<p class="c"><a target="_blank" href="https://lin.ee/Yv0oOW" class="fab fa-line"></a></p>
+<p class="c"><img src="slack.png"></p>
+<h3 class="c">Slackにうんちくんを招待する</h3>
+<p class="c"><a target="_blank" href="https://slack.com/oauth/v2/authorize?client_id=1001639938256.991566717393&scope=commands" class="fab fa-slack"></a></p>
 
 </section>
 

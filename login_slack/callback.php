@@ -36,4 +36,4 @@ if (empty($result) || isset($result["error"])) {
     exit;
 }
 
-header("Location:https://bonychops.com/experiment/Happinessbot/sample/slack.php");
+header("Location:https://bonychops.com/experiment/Happinessbot/sample/slack.php?logedid=true");
