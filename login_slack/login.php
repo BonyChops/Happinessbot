@@ -14,8 +14,7 @@ require_once('accesstoken.php');
 echo $callback_url;
 $url = sprintf(
     "https://slack.com/oauth/authorize"
-    ."?response_type=code"
-    ."&client_id=%s"
+    ."?&client_id=%s"
     ."&scope=commands"
     ,$slackclientid
 );
