@@ -39,15 +39,28 @@ if ($message_type == "text"){
 }
 $recieve_data = $json_object->{"events"}[0]->{"postback"}->{"data"};
 
-$str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
 
-$response_format_text = [[
-    "type" => "text",
-    "text" => $str
-]];
 if((($sourceType != "group")&&($sourceType != "room"))||(strpos($message_text,"/happy") !== FALSE)){
+    $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+
+    $response_format_text = [[
+        "type" => "text",
+        "text" => $str
+    ]];
     $result = sending_messages($accesstoken, $replyToken, $response_format_text);
 }
+
+if((($sourceType != "group")&&($sourceType != "room"))||(strpos($message_text,"/unchi") !== FALSE)){
+    $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
+
+    $response_format_text = [[
+        "type" => "video",
+        "originalContentUrl" => "https://bonychops.com/experiment/Happinessbot/LINE/OtowareShimaziro.mp4",
+        "previewImageUrl" => "https://kotonova.com/wp-content/uploads/2016/05/ecb4746a9a9e9ca11f60f6e1fcdc3d76-768x432.png"
+    ]];
+    $result = sending_messages($accesstoken, $replyToken, $response_format_text);
+}
+
 if(($sourceType == "group")||($sourceType == "room")){
     if($sendType == "join"){
         $response_format_text = [[
