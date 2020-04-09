@@ -51,8 +51,6 @@ if((($sourceType != "group")&&($sourceType != "room"))||(strpos($message_text,"/
 }
 
 if((($sourceType != "group")&&($sourceType != "room"))||(strpos($message_text,"/unchi") !== FALSE)){
-    $str = chooseTweet($objTwitterConection,$objTwitterConection2,"",false);
-
     $response_format_text = [[
         "type" => "video",
         "originalContentUrl" => "https://bonychops.com/experiment/Happinessbot/LINE/OtowareShimaziro.mp4",
